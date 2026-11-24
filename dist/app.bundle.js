@@ -254,13 +254,13 @@
     {
       id: 'bp-search-ai',
       category: 'search',
-      tag: 'SEARCH & AI VISIBILITY',
-      title: 'Full-Stack SEO + AEO & GEO Discovery System',
+      tag: 'SEO & AI VISIBILITY',
+      title: 'Get Your Business Found on Google & AI Search',
       summary:
-        'We combine technical site architecture, intent-mapped content hubs, and Schema.org entity structuring so your brand ranks on Google Search and gets cited inside AI answer engines.',
+        'We help your business appear in Google search results and AI platforms like ChatGPT through better website content, SEO and search optimization.',
       metrics: [
-        { value: 'SEO + AEO', label: 'Dual Search & AI Engine Coverage' },
-        { value: '100% Audit', label: 'Technical, On-Page & Schema Execution' },
+        { value: 'SEO + AI Search', label: 'Improve your visibility on Google and AI platforms.' },
+        { value: 'Complete SEO Audit', label: 'Find and fix website SEO problems.' },
       ],
       image: '/assets/bp-seo-ai.jpg',
       serviceLink: 'AEO & GEO Optimization',
