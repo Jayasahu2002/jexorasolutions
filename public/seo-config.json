@@ -1,0 +1,86 @@
+{
+  "siteUrl": "https://jexorasolutions.com",
+  "siteName": "JEXORA SOLUTIONS",
+  "defaultOgImage": "https://jexorasolutions.com/og-cover.jpg",
+  "tracking": {
+    "googleSiteVerification": "",
+    "ga4MeasurementId": "",
+    "gtmContainerId": "",
+    "metaPixelId": ""
+  },
+  "robotsRules": "User-agent: *\nAllow: /\nDisallow: /seo-admin\n\nSitemap: https://jexorasolutions.com/sitemap.xml",
+  "pages": {
+    "/": {
+      "label": "Home Page",
+      "title": "JEXORA SOLUTIONS | Worldwide Digital Marketing Agency",
+      "description": "JEXORA SOLUTIONS is a worldwide digital marketing agency growing brands with SEO, AEO & GEO AI search, Google & Meta Ads, custom websites, reels & design.",
+      "keywords": "JEXORA SOLUTIONS, Worldwide Digital Marketing Agency, SEO Optimization, AEO GEO AI Search, Google Ads Management, Meta Ads, WhatsApp Advertising, Website Design, Video Reel Editing, Graphic Design",
+      "robots": "index, follow",
+      "ogTitle": "JEXORA SOLUTIONS | Worldwide Digital Marketing Agency",
+      "ogDescription": "Worldwide SEO, AEO & GEO AI search, Google & Meta Ads, custom websites, reels, and graphic design engineered for measurable growth.",
+      "ogImage": "https://jexorasolutions.com/og-cover.jpg",
+      "priority": "1.0",
+      "changefreq": "weekly"
+    },
+    "/services": {
+      "label": "Services (8 Specialist Capabilities)",
+      "title": "Digital Marketing Services | JEXORA SOLUTIONS",
+      "description": "Explore 8 specialist services: SEO, AEO & GEO AI search, Social Media, Google Ads, Meta & WhatsApp Ads, Web Design, Video Reels, and Graphic Design.",
+      "keywords": "Digital Marketing Services, SEO Agency, AEO GEO Optimization, Google Ads Agency, Meta Ads WhatsApp Funnel, Custom Landing Page Design, Reel Editing, Graphic Design",
+      "robots": "index, follow",
+      "ogTitle": "8 Specialist Digital Marketing Services | JEXORA SOLUTIONS",
+      "ogDescription": "Transparent, strategy-first digital marketing services engineered to work together seamlessly.",
+      "ogImage": "https://jexorasolutions.com/og-cover.jpg",
+      "priority": "0.9",
+      "changefreq": "monthly"
+    },
+    "/industries": {
+      "label": "Industries We Serve",
+      "title": "Industries We Serve | JEXORA SOLUTIONS Agency",
+      "description": "Tailored marketing playbooks for Astrology, Restaurants, Hotels, Travel, Real Estate, Salons, Yoga & Wellness, and Fashion brands worldwide.",
+      "keywords": "Hospitality Digital Marketing, Restaurant Local SEO, Hotel Direct Booking Ads, Real Estate Lead Generation, Astrology Marketing, Salon Marketing, Fashion D2C Ads",
+      "robots": "index, follow",
+      "ogTitle": "Industries We Serve | JEXORA SOLUTIONS",
+      "ogDescription": "Tailored channels, creative direction and lead funnels built around how customers choose businesses in your sector.",
+      "ogImage": "https://jexorasolutions.com/og-cover.jpg",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    "/blog": {
+      "label": "Blog & Insights Index",
+      "title": "Digital Growth Blog & Playbooks | JEXORA SOLUTIONS",
+      "description": "Actionable guides from JEXORA SOLUTIONS on SEO, AEO & GEO AI search, Google & Meta Ads, Click-to-WhatsApp funnels, high-converting web UX, and reels.",
+      "keywords": "Digital Marketing Blog, SEO Guide, AEO GEO Guide, Google Ads Tips, WhatsApp Marketing Funnel, Landing Page CRO, Instagram Reels Strategy",
+      "robots": "index, follow",
+      "ogTitle": "Digital Growth Insights & Playbooks | JEXORA SOLUTIONS Blog",
+      "ogDescription": "Actionable guides on SEO, AI search visibility, paid acquisition, conversion web design and reels.",
+      "ogImage": "https://jexorasolutions.com/og-cover.jpg",
+      "priority": "0.85",
+      "changefreq": "weekly"
+    },
+    "/about": {
+      "label": "About Us & Founder",
+      "title": "About JEXORA SOLUTIONS | Meet Founder Jigyasa Sahu",
+      "description": "Meet JEXORA SOLUTIONS and founder Jigyasa Sahu. A worldwide strategic partner helping ambitious businesses strengthen their online presence and scale globally.",
+      "keywords": "About JEXORA SOLUTIONS, Jigyasa Sahu, Digital Marketing Agency Founder, Worldwide Marketing Partner",
+      "robots": "index, follow",
+      "ogTitle": "About JEXORA SOLUTIONS — A Strategic Partner for Digital Growth",
+      "ogDescription": "Creative minds, strategic thinking — meet Jigyasa Sahu and the worldwide JEXORA SOLUTIONS team.",
+      "ogImage": "https://jexorasolutions.com/assets/founder-jigyasa-sahu.jpg",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    "/contact": {
+      "label": "Contact & Free Consultation",
+      "title": "Contact JEXORA SOLUTIONS | Free Growth Proposal",
+      "description": "Book a free strategy consultation with JEXORA SOLUTIONS. Share your project goals for a transparent custom proposal covering SEO, AEO/GEO, Ads, Web, or Reels.",
+      "keywords": "Contact JEXORA SOLUTIONS, Free Digital Marketing Consultation, Request SEO Proposal, Hire Digital Marketing Agency",
+      "robots": "index, follow",
+      "ogTitle": "Request Your Free Growth Proposal | JEXORA SOLUTIONS",
+      "ogDescription": "Share your goals and receive a tailored digital growth roadmap from our strategy team.",
+      "ogImage": "https://jexorasolutions.com/og-cover.jpg",
+      "priority": "0.9",
+      "changefreq": "monthly"
+    }
+  }
+}
