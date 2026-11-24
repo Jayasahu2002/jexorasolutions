@@ -314,13 +314,13 @@
     {
       id: 'bp-consultation-funnels',
       category: 'search',
-      tag: 'CONSULTATION & SPIRITUAL BRANDS',
-      title: 'Authority Content & Consultation Booking System',
+      tag: 'CONTENT & BRAND GROWTH',
+      title: 'Build Trust. Reach More People. Grow Your Business.',
       summary:
-        'Trust-centered websites, educational reels, and search-optimized content funnels helping astrology, wellness and specialist advisors attract genuine worldwide consultations.',
+        'We help businesses and professionals promote their services through useful content, social media and professional websites to attract more customers and enquiries.',
       metrics: [
-        { value: 'Worldwide', label: 'Borderless Global Audience Reach' },
-        { value: 'High Trust', label: 'Content + Landing Page Lead Capture' },
+        { value: 'Build Trust', label: 'Posts, Videos & Helpful Content' },
+        { value: 'Get More Leads', label: 'Online Forms & Bookings' },
       ],
       image: '/assets/ind-astrology.jpg',
       serviceLink: 'SEO Optimization',
