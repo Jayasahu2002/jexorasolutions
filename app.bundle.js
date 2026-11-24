@@ -269,13 +269,13 @@
     {
       id: 'bp-paid-acquisition',
       category: 'paid',
-      tag: 'PAID MEDIA & LEAD GEN',
-      title: 'Google Ads, Meta Ads & Click-to-WhatsApp Funnel',
+      tag: 'PAID ADS & LEAD GENERATION',
+      title: 'Get More Customers with Google & Social Media Ads',
       summary:
-        'High-intent Google Search campaigns paired with thumb-stopping Meta ad creatives and instant WhatsApp enquiry routing — engineered for qualified conversations, not vanity clicks.',
+        'We create and manage Google and Facebook & Instagram ads to help your business reach the right people, get more enquiries and generate quality leads directly on WhatsApp.',
       metrics: [
-        { value: '3 Channels', label: 'Google · Instagram · WhatsApp Flows' },
-        { value: 'Live ROI', label: 'Conversion Tracking & Weekly Optimization' },
+        { value: '3 Ad Channels', label: 'Google · Facebook · Instagram' },
+        { value: 'Track Results', label: 'Ad Performance & Lead Tracking' },
       ],
       image: '/assets/bp-google-ads.jpg',
       serviceLink: 'Meta Ads & WhatsApp Advertising',
