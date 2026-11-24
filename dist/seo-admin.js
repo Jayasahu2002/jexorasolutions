@@ -2,14 +2,52 @@
   const OVERRIDES_KEY = 'jexora_seo_overrides_v1';
   const PASSCODE_KEY = 'jexora_seo_admin_passcode_v1';
   const AUTH_KEY = 'jexora_seo_admin_auth_v1';
+  const SESSION_PASS_KEY = 'jexora_seo_session_pass_v1';
   const DEFAULT_PASSCODE = 'jexora2026';
 
   let blogPostsRef = [];
   let baseConfig = null;
+  let cloudAvailable = false;
   let activeTab = 'meta';
   let selectedRoute = '/';
   let serpMode = 'desktop';
   let toastNotice = '';
+  let toastIsError = false;
+
+  function getSessionPasscode() {
+    try {
+      return sessionStorage.getItem(SESSION_PASS_KEY) || '';
+    } catch (_) {
+      return '';
+    }
+  }
+
+  async function publishConfigToCloud(cfg) {
+    try {
+      const res = await fetch('/api/seo-config', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-SEO-Passcode': getSessionPasscode(),
+        },
+        body: JSON.stringify({ config: cfg }),
+      });
+      const ct = res.headers.get('content-type') || '';
+      if (!ct.includes('application/json')) return { mode: 'offline' };
+      const data = await res.json();
+      if (res.ok && data && data.ok) {
+        cloudAvailable = true;
+        baseConfig = cfg;
+        try {
+          localStorage.removeItem(OVERRIDES_KEY);
+        } catch (_) {}
+        return { mode: 'cloud', ok: true, message: data.message };
+      }
+      return { mode: 'cloud', ok: false, error: (data && data.error) || 'Cloud save failed' };
+    } catch (_) {
+      return { mode: 'offline' };
+    }
+  }
 
   function esc(str) {
     return String(str == null ? '' : str)
@@ -693,7 +731,7 @@
 
               <div class="pt-2 flex flex-wrap items-center gap-3">
                 <button type="submit" class="ds-btn-gradient px-6 py-3">
-                  <span>SAVE &amp; APPLY LIVE</span>
+                  <span>${cloudAvailable ? 'SAVE &amp; PUBLISH LIVE' : 'SAVE &amp; APPLY LIVE'}</span>
                 </button>
                 <a href="${esc(selectedRoute)}" data-link class="ds-btn-outline-blue px-5 py-3">
                   <span>OPEN LIVE PAGE</span>
@@ -986,11 +1024,16 @@
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div class="space-y-1.5">
-                <div class="flex items-center gap-2">
+                <div class="flex flex-wrap items-center gap-2">
                   <span class="ds-eyebrow">JEXORA SOLUTIONS · INTERNAL SEO SUITE</span>
                   ${
-                    hasDrafts
-                      ? '<span class="px-2 py-0.5 bg-[#00B8FF]/20 border border-[#7DD8FF]/50 text-[#7DD8FF] text-[10px] font-bold uppercase">Local Drafts Active</span>'
+                    cloudAvailable
+                      ? '<span class="px-2.5 py-0.5 bg-[#DCFCE7] border border-[#86EFAC] text-[#15803D] text-[10px] font-extrabold uppercase">Cloud Auto-Publish Live</span>'
+                      : '<span class="px-2.5 py-0.5 bg-[#00B8FF]/20 border border-[#7DD8FF]/50 text-[#7DD8FF] text-[10px] font-bold uppercase">Local Preview Mode</span>'
+                  }
+                  ${
+                    hasDrafts && !cloudAvailable
+                      ? '<span class="px-2 py-0.5 bg-white/15 border border-white/30 text-white text-[10px] font-bold uppercase">Local Drafts Active</span>'
                       : ''
                   }
                 </div>
@@ -1021,7 +1064,11 @@
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-6">
           ${
             toastNotice
-              ? `<div id="seo-admin-notice" class="bg-[#DCFCE7] border border-[#86EFAC] text-[#15803D] px-4 py-3 text-xs font-bold flex items-center justify-between">
+              ? `<div id="seo-admin-notice" class="${
+                  toastIsError
+                    ? 'bg-[#FEF2F2] border-[#FCA5A5] text-[#DC2626]'
+                    : 'bg-[#DCFCE7] border-[#86EFAC] text-[#15803D]'
+                } border px-4 py-3 text-xs font-bold flex items-center justify-between">
                   <span>${esc(toastNotice)}</span>
                   <button type="button" id="seo-dismiss-notice" class="text-xs font-extrabold px-2">✕</button>
                 </div>`
@@ -1036,16 +1083,45 @@
   function attachAdminEvents(rerenderCallback) {
     const loginForm = document.getElementById('seo-admin-login-form');
     if (loginForm) {
-      loginForm.addEventListener('submit', (e) => {
+      loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const input = document.getElementById('seo-passcode-input');
         const err = document.getElementById('seo-login-err');
         const entered = input ? input.value.trim() : '';
-        if (entered === getPasscode()) {
+        let verified = false;
+        let usedCloud = false;
+
+        try {
+          const res = await fetch('/api/seo-config', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-SEO-Passcode': entered,
+            },
+            body: JSON.stringify({ action: 'verify' }),
+          });
+          const ct = res.headers.get('content-type') || '';
+          if (ct.includes('application/json')) {
+            usedCloud = true;
+            cloudAvailable = true;
+            const data = await res.json();
+            verified = Boolean(res.ok && data && data.ok);
+          }
+        } catch (_) {}
+
+        if (!usedCloud) {
+          verified = entered === getPasscode();
+        }
+
+        if (verified) {
           try {
             sessionStorage.setItem(AUTH_KEY, '1');
+            sessionStorage.setItem(SESSION_PASS_KEY, entered);
           } catch (_) {}
-          toastNotice = 'SEO Admin Panel unlocked. Any saved changes apply immediately in live preview.';
+          toastIsError = false;
+          toastNotice = cloudAvailable
+            ? 'SEO Admin unlocked in Cloud Auto-Publish Mode — every Save updates jexorasolutions.com, sitemap.xml & robots.txt live automatically!'
+            : 'SEO Admin unlocked in Local Preview Mode. Once deployed on Netlify, every Save auto-publishes globally with zero GitHub edits!';
           rerenderCallback();
         } else if (err) {
           err.textContent = 'Incorrect passcode. Try again (default: jexora2026).';
@@ -1069,8 +1145,10 @@
       logoutBtn.addEventListener('click', () => {
         try {
           sessionStorage.removeItem(AUTH_KEY);
+          sessionStorage.removeItem(SESSION_PASS_KEY);
         } catch (_) {}
         toastNotice = '';
+        toastIsError = false;
         rerenderCallback();
       });
     }
@@ -1166,7 +1244,7 @@
         el.addEventListener('input', refreshLiveSerp);
         el.addEventListener('change', refreshLiveSerp);
       });
-      pageForm.addEventListener('submit', (e) => {
+      pageForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const cfg = getConfig();
         cfg.pages[selectedRoute] = Object.assign({}, cfg.pages[selectedRoute], {
@@ -1179,15 +1257,26 @@
           ogDescription: pageForm.ogDescription.value.trim(),
           ogImage: pageForm.ogImage.value.trim(),
         });
-        saveLocalOverrides(cfg);
-        toastNotice = `Saved SEO settings for "${selectedRoute}"! Download seo-config.json from Sitemap & Export when ready to publish permanently.`;
+
+        const res = await publishConfigToCloud(cfg);
+        if (res.mode === 'cloud' && res.ok) {
+          toastIsError = false;
+          toastNotice = `Published LIVE for "${selectedRoute}"! Meta tags & /sitemap.xml are updated globally — zero GitHub edits needed.`;
+        } else if (res.mode === 'cloud' && !res.ok) {
+          toastIsError = true;
+          toastNotice = `Could not publish to cloud: ${res.error}`;
+        } else {
+          saveLocalOverrides(cfg);
+          toastIsError = false;
+          toastNotice = `Saved "${selectedRoute}" in Local Preview! On live Netlify hosting, clicking Save auto-publishes globally with zero GitHub edits.`;
+        }
         rerenderCallback();
       });
     }
 
     const trackForm = document.getElementById('seo-tracking-form');
     if (trackForm) {
-      trackForm.addEventListener('submit', (e) => {
+      trackForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const cfg = getConfig();
         cfg.siteUrl = trackForm.siteUrl.value.trim().replace(/\/+$/, '') || 'https://jexorasolutions.com';
@@ -1196,9 +1285,20 @@
         cfg.tracking.ga4MeasurementId = trackForm.ga4MeasurementId.value.trim();
         cfg.tracking.metaPixelId = trackForm.metaPixelId.value.trim();
         cfg.robotsRules = `User-agent: *\nAllow: /\nDisallow: /seo-admin\n\nSitemap: ${cfg.siteUrl}/sitemap.xml`;
-        saveLocalOverrides(cfg);
         injectTracking(cfg);
-        toastNotice = 'Tracking & verification settings saved and active!';
+
+        const res = await publishConfigToCloud(cfg);
+        if (res.mode === 'cloud' && res.ok) {
+          toastIsError = false;
+          toastNotice = 'Tracking, GA4, Search Console & robots.txt published LIVE globally!';
+        } else if (res.mode === 'cloud' && !res.ok) {
+          toastIsError = true;
+          toastNotice = `Could not publish tracking settings: ${res.error}`;
+        } else {
+          saveLocalOverrides(cfg);
+          toastIsError = false;
+          toastNotice = 'Tracking settings saved for Local Preview (auto-publishes live on Netlify).';
+        }
         rerenderCallback();
       });
     }
@@ -1249,15 +1349,46 @@
 
     const passForm = document.getElementById('seo-passcode-form');
     if (passForm) {
-      passForm.addEventListener('submit', (e) => {
+      passForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const inp = document.getElementById('seo-new-passcode');
         const val = inp ? inp.value.trim() : '';
         if (val.length >= 4) {
+          let handledInCloud = false;
           try {
-            localStorage.setItem(PASSCODE_KEY, val);
+            const res = await fetch('/api/seo-config', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-SEO-Passcode': getSessionPasscode(),
+              },
+              body: JSON.stringify({ action: 'change_passcode', newPasscode: val }),
+            });
+            const ct = res.headers.get('content-type') || '';
+            if (ct.includes('application/json')) {
+              handledInCloud = true;
+              const data = await res.json();
+              if (res.ok && data && data.ok) {
+                try {
+                  sessionStorage.setItem(SESSION_PASS_KEY, val);
+                } catch (_) {}
+                toastIsError = false;
+                toastNotice = 'Cloud SEO Admin passcode updated securely!';
+              } else {
+                toastIsError = true;
+                toastNotice = (data && data.error) || 'Failed to update passcode.';
+              }
+            }
           } catch (_) {}
-          toastNotice = 'Admin passcode updated successfully!';
+
+          if (!handledInCloud) {
+            try {
+              localStorage.setItem(PASSCODE_KEY, val);
+              sessionStorage.setItem(SESSION_PASS_KEY, val);
+            } catch (_) {}
+            toastIsError = false;
+            toastNotice = 'Local admin passcode updated successfully!';
+          }
           rerenderCallback();
         }
       });
@@ -1265,11 +1396,32 @@
 
     const resetBtn = document.getElementById('seo-reset-drafts');
     if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
+      resetBtn.addEventListener('click', async () => {
         try {
           localStorage.removeItem(OVERRIDES_KEY);
         } catch (_) {}
-        toastNotice = 'Local SEO drafts cleared — restored to published seo-config.json defaults.';
+        if (cloudAvailable) {
+          try {
+            const res = await fetch('/api/seo-config', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-SEO-Passcode': getSessionPasscode(),
+              },
+              body: JSON.stringify({ action: 'reset' }),
+            });
+            const ct = res.headers.get('content-type') || '';
+            if (ct.includes('application/json') && res.ok) {
+              baseConfig = null;
+              toastIsError = false;
+              toastNotice = 'Live cloud SEO config reset to default settings.';
+              rerenderCallback();
+              return;
+            }
+          } catch (_) {}
+        }
+        toastIsError = false;
+        toastNotice = 'Local SEO drafts cleared — restored to default seo-config.json.';
         rerenderCallback();
       });
     }
@@ -1277,15 +1429,39 @@
 
   function init(blogPosts, onLoaded) {
     blogPostsRef = Array.isArray(blogPosts) ? blogPosts : [];
-    fetch('/seo-config.json', { cache: 'no-cache' })
-      .then((res) => (res.ok ? res.json() : null))
-      .then((json) => {
-        if (json && typeof json === 'object') {
-          baseConfig = json;
-          if (typeof onLoaded === 'function') onLoaded();
+    const loadStaticFallback = () =>
+      fetch('/seo-config.json', { cache: 'no-cache' })
+        .then((res) => (res.ok ? res.json() : null))
+        .then((json) => {
+          if (json && typeof json === 'object') {
+            baseConfig = json;
+            if (typeof onLoaded === 'function') onLoaded();
+          }
+        })
+        .catch(() => {});
+
+    fetch('/api/seo-config', { cache: 'no-store' })
+      .then((res) => {
+        const ct = res.headers.get('content-type') || '';
+        if (!res.ok || !ct.includes('application/json')) return null;
+        return res.json();
+      })
+      .then((data) => {
+        if (data && data.ok) {
+          cloudAvailable = true;
+          if (data.config && typeof data.config === 'object') {
+            baseConfig = data.config;
+            if (typeof onLoaded === 'function') onLoaded();
+          } else {
+            loadStaticFallback();
+          }
+        } else {
+          loadStaticFallback();
         }
       })
-      .catch(() => {});
+      .catch(() => {
+        loadStaticFallback();
+      });
   }
 
   window.JexoraSEO = {

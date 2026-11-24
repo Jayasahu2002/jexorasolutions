@@ -1,0 +1,11 @@
+{
+  "name": "jexora-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "JEXORA SOLUTIONS Worldwide Digital Marketing Agency with Cloud Auto-Publish SEO Admin Panel",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "@netlify/functions": "^3.0.0"
+  }
+}
