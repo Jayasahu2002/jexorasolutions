@@ -285,12 +285,12 @@
       id: 'bp-web-brand',
       category: 'web',
       tag: 'WEBSITE & LANDING PAGE DESIGN',
-      title: 'Conversion-Engineered Websites & Landing Pages',
+      title: 'Websites That Attract Visitors & Bring More Customers',
       summary:
-        'Bespoke responsive websites, focused ad landing pages, and scroll-stopping graphic creatives designed to elevate authority and maximize visitor-to-lead conversion.',
+        'We design modern, mobile-friendly websites and landing pages that showcase your business, build trust and help turn visitors into customers.',
       metrics: [
-        { value: 'Mobile-First', label: 'Fast, Responsive Custom Architecture' },
-        { value: 'CRO-Ready', label: 'Web UI, Copy & Conversion Funnels' },
+        { value: 'Mobile-Friendly', label: 'Works smoothly on phones, tablets and computers.' },
+        { value: 'Built to Convert', label: 'Clear content and easy enquiry options.' },
       ],
       image: '/assets/bp-web-ux.jpg',
       serviceLink: 'Website & Landing Page Design',
