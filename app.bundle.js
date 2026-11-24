@@ -1071,8 +1071,8 @@
             ${getLogoMarkup('header')}
           </a>
 
-          <nav class="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
-            <a href="/" data-link class="ds-nav-link ${pathname === '/' ? 'is-active' : ''}">HOME</a>
+          <nav class="hidden lg:flex items-center gap-6 xl:gap-7" aria-label="Main Navigation">
+            <a href="/" data-link class="ds-nav-link ${pathname === '/' && window.location.hash !== '#faq' ? 'is-active' : ''}">HOME</a>
 
             <div class="ds-mega-trigger">
               <a href="/services" data-link class="ds-nav-link ${pathname === '/services' ? 'is-active' : ''}">
@@ -1113,6 +1113,7 @@
 
             <a href="/industries" data-link class="ds-nav-link ${pathname === '/industries' ? 'is-active' : ''}">INDUSTRIES</a>
             <a href="/blog" data-link class="ds-nav-link ${pathname === '/blog' || pathname.startsWith('/blog/') ? 'is-active' : ''}">BLOG</a>
+            <a href="/#faq" data-link class="ds-nav-link ${pathname === '/' && window.location.hash === '#faq' ? 'is-active' : ''}">FAQ</a>
             <a href="/about" data-link class="ds-nav-link ${pathname === '/about' ? 'is-active' : ''}">ABOUT US</a>
             <a href="/contact" data-link class="ds-nav-link ${pathname === '/contact' ? 'is-active' : ''}">CONTACT</a>
           </nav>
@@ -1149,12 +1150,15 @@
               { label: 'Services', path: '/services' },
               { label: 'Industries', path: '/industries' },
               { label: 'Blog', path: '/blog' },
+              { label: 'FAQ', path: '/#faq' },
               { label: 'About Us', path: '/about' },
               { label: 'Contact', path: '/contact' },
             ]
               .map((item) => {
                 const isActive =
-                  pathname === item.path ||
+                  (item.path === '/#faq' && pathname === '/' && window.location.hash === '#faq') ||
+                  (item.path === '/' && pathname === '/' && window.location.hash !== '#faq') ||
+                  (item.path !== '/' && item.path !== '/#faq' && pathname === item.path) ||
                   (item.path === '/blog' && pathname.startsWith('/blog/'));
                 return `
                   <a href="${item.path}" data-link class="px-3.5 py-3 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-between border-b border-[#EEF4FD] ${
