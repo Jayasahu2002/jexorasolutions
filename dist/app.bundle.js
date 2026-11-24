@@ -3007,12 +3007,12 @@
   function renderFooter() {
     return `
       <footer class="ds-footer-bg text-white relative overflow-hidden border-t border-[#00B8FF]/25">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-10 relative z-10">
           <!-- Row 1: Giant CTA Headline -->
-          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-12 border-b border-white/15">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-10 border-b border-white/15">
             <div>
               <p class="ds-eyebrow mb-2">WHERE TECHNOLOGY MEETS POSSIBILITIES</p>
-              <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Let's grow your brand.</h2>
+              <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-white tracking-tight">Let's grow your brand.</h2>
             </div>
             <a href="/contact" data-link class="ds-btn-gradient px-8 py-4 shrink-0">
               <span>START A PROJECT</span>
@@ -3020,47 +3020,76 @@
             </a>
           </div>
 
-          <!-- Row 2: Logo + Global Regions with Giant Translucent Codes -->
-          <div class="py-12 border-b border-white/15 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div class="lg:col-span-3 space-y-4">
+          <!-- Row 2: 4-Column Structured Footer Grid -->
+          <div class="py-12 border-b border-white/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 items-start">
+            <!-- Column 1: Brand Info & Direct Contact -->
+            <div class="lg:col-span-4 space-y-5">
               <a href="/" data-link class="inline-block focus:outline-none">
                 ${getLogoMarkup('footer')}
               </a>
-              <p class="text-xs text-white/70 leading-relaxed max-w-xs">
-                International digital marketing, SEO, AEO/GEO, paid acquisition, custom web design, video reels &amp; graphic design agency.
+              <p class="text-xs sm:text-[13px] text-white/80 leading-relaxed max-w-sm">
+                Worldwide digital marketing agency helping startups, SMEs and growing brands build a strong online presence, reach more customers, and scale with measurable results.
               </p>
+
+              <div class="space-y-3 pt-1 text-xs sm:text-[13px]">
+                <a href="${SOCIAL_LINKS.whatsappBase}?text=Hello%20JEXORA%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20my%20business." target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/90 hover:text-[#4ADE80] transition-colors">
+                  <span class="ds-wa-icon-anim shrink-0">${getSvgIcon('whatsapp', 'w-[18px] h-[18px] text-[#25D366]')}</span>
+                  <span class="font-semibold">Chat on WhatsApp (+91 74278 37194)</span>
+                </a>
+                <a href="/contact" data-link class="flex items-center gap-3 text-white/85 hover:text-[#7DD8FF] transition-colors">
+                  <span class="text-[#7DD8FF] shrink-0">${getSvgIcon('globe', 'w-4 h-4')}</span>
+                  <span>jexorasolutions.com · Worldwide</span>
+                </a>
+              </div>
+
+              <div class="flex items-center gap-2.5 pt-2">
+                <a href="${SOCIAL_LINKS.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 border border-white/25 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('facebook', 'w-4 h-4')}</a>
+                <a href="${SOCIAL_LINKS.instagram}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 border border-white/25 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('instagram', 'w-4 h-4')}</a>
+                <a href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 border border-white/25 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('linkedin', 'w-4 h-4')}</a>
+              </div>
             </div>
 
-            <div class="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-              ${GLOBAL_MARKETS.map(
-                (m) => `
-                <div class="space-y-1">
-                  <p class="text-sm font-extrabold text-white">${m.name}</p>
-                  <p class="text-[11px] text-[#00B8FF] font-semibold pt-0.5">${m.focus[0]}</p>
-                  <p class="text-[11px] text-white/65">${m.focus[1]}</p>
-                </div>
-              `
-              ).join('')}
+            <!-- Column 2: EXPLORE -->
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#7DD8FF]">EXPLORE</h3>
+              <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/80">
+                <li><a href="/" data-link class="hover:text-white transition-colors">Home</a></li>
+                <li><a href="/services" data-link class="hover:text-white transition-colors">Services</a></li>
+                <li><a href="/industries" data-link class="hover:text-white transition-colors">Industries</a></li>
+                <li><a href="/blog" data-link class="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="/#faq" data-link class="hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="/about" data-link class="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/contact" data-link class="hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 3: SERVICES -->
+            <div class="lg:col-span-3 space-y-4">
+              <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#7DD8FF]">SERVICES</h3>
+              <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/80">
+                ${SERVICES_DATA.map(
+                  (s) =>
+                    `<li><a href="/services#${s.id}" data-link class="hover:text-white transition-colors leading-snug block">${s.title}</a></li>`
+                ).join('')}
+              </ul>
+            </div>
+
+            <!-- Column 4: INDUSTRIES -->
+            <div class="lg:col-span-3 space-y-4">
+              <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#7DD8FF]">INDUSTRIES</h3>
+              <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/80">
+                ${INDUSTRIES_DATA.map(
+                  (ind) =>
+                    `<li><a href="/industries#${ind.id}" data-link class="hover:text-white transition-colors leading-snug block">${ind.title}</a></li>`
+                ).join('')}
+              </ul>
             </div>
           </div>
 
-          <!-- Row 3: Compact Inline Links & Socials (Cleared from FAB & Mobile Sticky Bar) -->
-          <div class="pt-8 pb-28 lg:pb-4 lg:pr-44 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 text-[11px] text-white/70">
+          <!-- Row 3: Clean Copyright Strip (Cleared from FAB & Mobile Sticky Bar) -->
+          <div class="pt-7 pb-28 lg:pb-4 lg:pr-44 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/70">
             <p>© 2026 JEXORA SOLUTIONS. All rights reserved.</p>
-            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 uppercase tracking-[0.12em] font-semibold">
-              <a href="/" data-link class="hover:text-[#00B8FF] transition-colors">Home</a>
-              <a href="/about" data-link class="hover:text-[#00B8FF] transition-colors">About</a>
-              <a href="/services" data-link class="hover:text-[#00B8FF] transition-colors">Services</a>
-              <a href="/industries" data-link class="hover:text-[#00B8FF] transition-colors">Industries</a>
-              <a href="/blog" data-link class="hover:text-[#00B8FF] transition-colors">Blog</a>
-              <a href="/#faq" data-link class="hover:text-[#00B8FF] transition-colors">FAQ</a>
-              <a href="/contact" data-link class="hover:text-[#00B8FF] transition-colors">Contact</a>
-            </div>
-            <div class="flex items-center gap-3">
-              <a href="${SOCIAL_LINKS.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 border border-white/20 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('facebook', 'w-3.5 h-3.5')}</a>
-              <a href="${SOCIAL_LINKS.instagram}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-8 h-8 border border-white/20 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('instagram', 'w-3.5 h-3.5')}</a>
-              <a href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-8 h-8 border border-white/20 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('linkedin', 'w-3.5 h-3.5')}</a>
-            </div>
+            <p class="text-[11px] uppercase tracking-[0.14em] text-[#7DD8FF] font-semibold">Where Technology Meets Possibilities</p>
           </div>
         </div>
       </footer>
