@@ -3034,11 +3034,11 @@
               <div class="space-y-3 pt-1 text-xs sm:text-[13px]">
                 <a href="${SOCIAL_LINKS.whatsappBase}?text=Hello%20JEXORA%20SOLUTIONS%2C%20I%20would%20like%20to%20discuss%20my%20business." target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white/90 hover:text-[#4ADE80] transition-colors">
                   <span class="ds-wa-icon-anim shrink-0">${getSvgIcon('whatsapp', 'w-[18px] h-[18px] text-[#25D366]')}</span>
-                  <span class="font-semibold">Chat on WhatsApp (+91 74278 37194)</span>
+                  <span class="font-semibold">Chat on WhatsApp</span>
                 </a>
                 <a href="/contact" data-link class="flex items-center gap-3 text-white/85 hover:text-[#7DD8FF] transition-colors">
                   <span class="text-[#7DD8FF] shrink-0">${getSvgIcon('globe', 'w-4 h-4')}</span>
-                  <span>jexorasolutions.com · Worldwide</span>
+                  <span>jexorasolutions.com</span>
                 </a>
               </div>
 
