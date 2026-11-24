@@ -299,13 +299,13 @@
     {
       id: 'bp-hospitality-growth',
       category: 'paid',
-      tag: 'HOSPITALITY & LOCAL GROWTH',
-      title: 'Restaurants, Hotels & Local Footfall Accelerator',
+      tag: 'BUSINESS GROWTH & DIGITAL MARKETING',
+      title: 'Digital Marketing Solutions for Every Business',
       summary:
-        'Hyper-local SEO, mouth-watering visual reels, and targeted local offer campaigns built to drive direct table reservations, direct hotel bookings and repeat guest loyalty.',
+        'We help businesses across different industries reach more customers, improve their online presence and grow with effective digital marketing strategies.',
       metrics: [
-        { value: 'Direct Leads', label: 'Tables, Bookings & WhatsApp Enquiries' },
-        { value: 'Reels + Ads', label: 'High-Retention Food & Stay Visuals' },
+        { value: 'More Reach', label: 'SEO, Google & Social Media' },
+        { value: 'More Leads', label: 'Online Ads & Customer Enquiries' },
       ],
       image: '/assets/ind-restaurants.jpg',
       serviceLink: 'Social Media Marketing',
