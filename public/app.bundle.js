@@ -2,7 +2,7 @@
   const SOCIAL_LINKS = {
     facebook: 'https://www.facebook.com/Jexorasolutions/',
     instagram: 'https://www.instagram.com/jexorasolutions/',
-    linkedin: 'https://www.linkedin.com/company/jexorasolutions/',
+    linkedin: 'https://www.linkedin.com/in/jaya-sahu01/',
     whatsappBase: 'https://wa.me/917427837194',
   };
 
@@ -2398,6 +2398,10 @@
                   <a href="/contact" data-link class="ds-btn-gradient px-6 py-3">
                     <span>BOOK A STRATEGY CALL</span>
                     ${getSvgIcon('chevronRight', 'w-4 h-4')}
+                  </a>
+                  <a href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" class="inline-flex items-center gap-2 border border-[#1D58C8]/30 hover:border-[#1D58C8] hover:bg-[#F2F7FF] text-[#0E2A6E] hover:text-[#1D58C8] text-xs font-bold uppercase tracking-[0.14em] px-4 py-3 transition-colors">
+                    ${getSvgIcon('linkedin', 'w-4 h-4 text-[#0A66C2]')}
+                    <span>LINKEDIN</span>
                   </a>
                 </div>
               </div>
