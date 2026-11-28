@@ -9,33 +9,36 @@
   const HERO_SLIDES = [
     {
       id: 'slide-1',
-      label: '01 — GROW YOUR BUSINESS ONLINE',
-      heading: 'Grow Your Business',
-      accentHeading: 'With Us',
-      subheadline: 'Smart Digital Solutions for Every Business',
+      label: '01 — DIGITAL MARKETING AGENCY',
+      heading: 'Digital Marketing Agency',
+      accentHeading: 'Helping Businesses Grow Worldwide',
+      subheadline: 'Complete Digital Marketing Services for Businesses Ready to Grow.',
       description:
-        'We help businesses get more customers, build their online presence and grow with the right digital marketing services.',
+        'JEXORA SOLUTIONS is an international digital marketing agency helping businesses strengthen their online presence through SEO, paid advertising, social media marketing, website design, branding, and lead generation services.',
       image: '/assets/hero-trending-1.jpg',
+      alt: 'JEXORA SOLUTIONS international digital marketing agency helping businesses grow worldwide with SEO, paid ads and web design',
     },
     {
       id: 'slide-2',
-      label: '02 — GET MORE CUSTOMERS',
+      label: '02 — DIGITAL MARKETING SERVICES',
       heading: 'Reach More People.',
       accentHeading: 'Get More Customers.',
-      subheadline: 'Make Your Business Stand Out Online',
+      subheadline: 'Performance Digital Marketing Services Built for Growth.',
       description:
-        'From Google to social media, we help your business reach the right people and attract more customers.',
+        'From Google Search and AI visibility to high-converting social media campaigns, our digital marketing agency helps your business reach the right audience and generate qualified leads.',
       image: '/assets/hero-slide-2.jpg',
+      alt: 'JEXORA SOLUTIONS digital marketing services team driving paid advertising, SEO and social media customer acquisition',
     },
     {
       id: 'slide-3',
-      label: '03 — BUILD YOUR ONLINE PRESENCE',
+      label: '03 — INTERNATIONAL DIGITAL MARKETING AGENCY',
       heading: 'Take Your Business',
       accentHeading: 'to the Next Level',
-      subheadline: 'Everything Your Business Needs to Grow',
+      subheadline: 'Everything Your Business Needs to Grow Globally.',
       description:
-        'Get professional websites, creative designs, online marketing and complete digital support in one place.',
+        'As an international digital marketing agency, we unite custom websites, creative design, SEO, and online marketing support in one place to help ambitious businesses scale.',
       image: '/assets/hero-slide-3.jpg',
+      alt: 'International digital marketing agency specialists collaborating on custom website design and global business growth',
     },
   ];
 
@@ -1580,7 +1583,7 @@
              =============================================================== -->
         <section id="hero-slider" class="ds-hero-bg pt-[108px] lg:pt-[112px] text-white">
           <div class="absolute inset-0 z-0">
-            <img id="hero-slide-img" src="${slide.image}" alt="${slide.heading}" class="w-full h-full object-cover object-center transition-opacity duration-700" />
+            <img id="hero-slide-img" src="${slide.image}" alt="${escapeHtml(slide.alt || `${slide.heading} ${slide.accentHeading}`)}" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center transition-opacity duration-700" />
             <div class="absolute inset-0 ds-hero-scrim"></div>
             <div class="absolute inset-0 ds-grid-pattern opacity-60"></div>
             <div class="ds-ambient-glow-tr"></div>
@@ -1591,23 +1594,23 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
               <!-- Left Authority Column (Crisp Roboto Editorial Hierarchy) -->
               <div class="lg:col-span-7 space-y-5">
-                <h1 id="hero-slide-heading" class="text-[42px] sm:text-[54px] lg:text-[66px] font-bold tracking-[-0.02em] text-white leading-[1.08]">
+                <h1 id="hero-slide-heading" class="text-[34px] sm:text-[44px] lg:text-[52px] font-bold tracking-[-0.02em] text-white leading-[1.1]">
                   <span class="block">${slide.heading}</span>
                   <span class="block">${slide.accentHeading}</span>
                 </h1>
 
-                <p id="hero-slide-sub" class="text-xl sm:text-2xl lg:text-[26px] font-bold text-white tracking-[-0.01em] leading-snug pt-1">${slide.subheadline}</p>
+                <h2 id="hero-slide-sub" class="text-lg sm:text-xl lg:text-[22px] font-bold text-[#B8EBFF] tracking-[-0.01em] leading-snug pt-0.5">${slide.subheadline}</h2>
 
-                <p id="hero-slide-desc" class="text-base sm:text-[17px] font-normal text-white/95 leading-[1.6] max-w-[560px]">${slide.description}</p>
+                <p id="hero-slide-desc" class="text-sm sm:text-base font-normal text-white/95 leading-[1.65] max-w-[590px]">${slide.description}</p>
 
                 <div class="pt-2 flex flex-wrap items-center gap-3.5">
                   <a href="/services" data-link class="ds-btn-gradient px-6 py-3.5">
                     <span>EXPLORE OUR SERVICES</span>
                     ${getSvgIcon('chevronRight', 'w-4 h-4')}
                   </a>
-                  <a href="${SOCIAL_LINKS.whatsappBase}?text=Hello%20JEXORA%20SOLUTIONS%2C%20I%20would%20like%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#16A34A] text-white border border-white/40 rounded-[2px] text-xs font-bold uppercase tracking-[0.14em] px-5 py-3.5 shadow-lg transition-all">
-                    <span class="ds-wa-icon-anim">${getSvgIcon('whatsapp', 'w-4 h-4 text-white')}</span>
-                    <span>WHATSAPP DIRECT</span>
+                  <a href="/contact" data-link class="ds-btn-glass px-6 py-3.5">
+                    <span>GET A FREE CONSULTATION</span>
+                    ${getSvgIcon('chevronRight', 'w-4 h-4 text-[#7DD8FF]')}
                   </a>
                 </div>
 
@@ -2898,7 +2901,7 @@
     if (!imgEl || !hdgEl || !dscEl) return;
 
     imgEl.src = slide.image;
-    imgEl.alt = `${slide.heading} ${slide.accentHeading}`;
+    imgEl.alt = slide.alt || `${slide.heading} ${slide.accentHeading}`;
     hdgEl.innerHTML = `<span class="block">${slide.heading}</span><span class="block">${slide.accentHeading}</span>`;
     if (subEl) subEl.textContent = slide.subheadline;
     dscEl.textContent = slide.description;

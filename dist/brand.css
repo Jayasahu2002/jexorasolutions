@@ -688,7 +688,8 @@ button, input, select, textarea {
 @media (min-width: 1024px) {
   .ds-hacc-container {
     flex-direction: row;
-    height: 365px;
+    min-height: 410px;
+    align-items: stretch;
     gap: 0.85rem;
   }
 }
