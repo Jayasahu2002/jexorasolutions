@@ -49,25 +49,30 @@
       category: 'search',
       shortLabel: 'SEO',
       title: 'SEO Optimization',
+      primaryKeyword: 'SEO Services',
       shortDesc:
-        'Strengthen your organic search visibility with technical, on-page and content-led SEO architectures.',
+        'Strengthen your organic search visibility with professional SEO services combining technical architecture, search-intent keyword mapping and on-page optimization.',
       iconName: 'search',
       whatsIncluded: [
-        'Technical SEO audit & crawl fixes',
-        'High-intent keyword research',
-        'On-page & metadata optimization',
-        'Content and authority link strategy',
+        'Technical SEO audit & crawlability fixes',
+        'High-intent keyword research & mapping',
+        'On-page SEO & metadata optimization',
+        'Content structure & authority link strategy',
       ],
       problemsAddressed:
-        'Low organic visibility, stagnant search traffic and technical website issues holding back rankings.',
+        'Low Google visibility, stagnant organic traffic, indexing errors and weak site architecture preventing your pages from capturing relevant searches.',
       whoBenefits:
-        'Businesses seeking compounding, sustainable visibility across Google Search.',
+        'Startups, SMEs and growing brands seeking reliable SEO optimization services for long-term organic discovery across local and international search.',
       keyDeliverables: [
-        'Technical SEO audit',
-        'Keyword & intent map',
-        'Optimization changelog',
-        'Monthly ranking reports',
+        'Comprehensive technical SEO audit',
+        'Keyword & search-intent roadmap',
+        'On-page & metadata changelog',
+        'Monthly organic visibility reports',
       ],
+      relatedLinkHref: '/blog/restaurants-hotels-local-seo-direct-bookings',
+      relatedLinkLabel: 'SEO & Direct Search Discovery Guide',
+      pairServiceId: 'aeo-geo-optimization',
+      pairServiceLabel: 'Pair with AEO & GEO Optimization',
     },
     {
       id: 'aeo-geo-optimization',
@@ -75,25 +80,30 @@
       category: 'search',
       shortLabel: 'AEO & GEO',
       title: 'AEO & GEO Optimization',
+      primaryKeyword: 'AEO Services',
       shortDesc:
-        'Engineer your brand content to be cited by answer engines and AI-powered search through Answer & Generative Engine Optimization.',
+        'Position your business for AI-powered discovery with specialized AEO services and GEO services combining Answer Engine Optimization and Generative Engine Optimization.',
       iconName: 'sparkles',
       whatsIncluded: [
-        'Answer-focused content structuring',
-        'Schema.org & structured data review',
-        'Entity and topic authority mapping',
-        'AI search visibility monitoring',
+        'Answer Engine Optimization content structuring',
+        'Generative Engine Optimization entity mapping',
+        'Schema.org & JSON-LD structured data review',
+        'AI search & citation visibility monitoring',
       ],
       problemsAddressed:
-        'Brand content that AI assistants and answer engines fail to interpret, cite or surface.',
+        'Brand pages and service content that AI assistants, conversational search tools and answer engines fail to interpret, cite or recommend accurately.',
       whoBenefits:
-        'Forward-thinking brands capturing discoverability across both Google and AI search.',
+        'Forward-thinking businesses preparing their online presence to be discovered across both traditional search engines and AI-generated answer platforms.',
       keyDeliverables: [
-        'AI visibility audit',
+        'AI search & entity visibility audit',
         'Answer-first content blueprints',
-        'JSON-LD schema recommendations',
-        'Citation & visibility reporting',
+        'Structured data & JSON-LD implementation guide',
+        'Ongoing citation & visibility reporting',
       ],
+      relatedLinkHref: '/blog/aeo-geo-ai-search-guide-2026',
+      relatedLinkLabel: 'AEO & GEO AI Search Guide',
+      pairServiceId: 'seo-optimization',
+      pairServiceLabel: 'Pair with SEO Optimization',
     },
     {
       id: 'social-media-marketing',
@@ -101,25 +111,30 @@
       category: 'brand',
       shortLabel: 'Social Media',
       title: 'Social Media Marketing',
+      primaryKeyword: 'Social Media Marketing Services',
       shortDesc:
-        'Build an authoritative, active brand presence with strategic social calendars, visual storytelling and community management.',
+        'Build an active, recognizable brand presence with strategic social media marketing services, structured social media management and consistent visual storytelling.',
       iconName: 'megaphone',
       whatsIncluded: [
-        'Monthly content strategy & planning',
-        'Custom post design and persuasive copy',
+        'Monthly social media content strategy',
+        'Custom post design & persuasive copywriting',
         'Consistent multi-platform scheduling',
-        'Active community & DM engagement',
+        'Active community & inbox management',
       ],
       problemsAddressed:
-        'Irregular posting, weak visual identity, low engagement and fragmented brand messaging.',
+        'Irregular posting schedules, fragmented messaging, low audience engagement and inconsistent brand presentation across social channels.',
       whoBenefits:
-        'Businesses seeking a consistent, professionally managed social presence that builds trust.',
+        'Businesses looking for a dedicated social media marketing agency to manage organic brand building, audience trust and consistent social presence.',
       keyDeliverables: [
-        'Monthly content calendar',
+        'Monthly social content calendar',
         'Custom designed posts & carousels',
-        'Caption & hashtag system',
-        'Engagement & reach summary',
+        'Caption, CTA & hashtag framework',
+        'Monthly engagement & reach summary',
       ],
+      relatedLinkHref: '/blog/global-consultation-funnels-high-trust-brands',
+      relatedLinkLabel: 'Brand Authority & Consultation Guide',
+      pairServiceId: 'video-reel-creation-editing',
+      pairServiceLabel: 'Pair with Video & Reel Creation & Editing',
     },
     {
       id: 'google-ads-management',
@@ -127,25 +142,30 @@
       category: 'paid',
       shortLabel: 'Google Ads',
       title: 'Google Ads Management',
+      primaryKeyword: 'Google Ads Management Services',
       shortDesc:
-        'Capture high-intent buyers on Google with tightly targeted campaigns, precision conversion tracking and continuous bid optimization.',
+        'Capture high-intent searchers ready to enquire with precision Google Ads management services, structured Google PPC advertising and transparent conversion tracking.',
       iconName: 'target',
       whatsIncluded: [
-        'Full-funnel Google campaign strategy',
-        'High-intent keyword & audience targeting',
-        'Conversion-focused ad copywriting',
-        'GA4 & conversion tracking setup',
+        'Full-funnel Google PPC advertising strategy',
+        'High-intent keyword & negative keyword targeting',
+        'Conversion-focused search & display ad copy',
+        'GA4 & conversion tracking configuration',
       ],
       problemsAddressed:
-        'Wasted ad spend, irrelevant clicks, weak targeting and unclear return on ad spend.',
+        'Wasted ad spend, irrelevant search clicks, unoptimized landing destinations and missing attribution across paid search campaigns.',
       whoBenefits:
-        'Businesses investing in Google Search & Display for qualified enquiries, bookings and sales.',
+        'Businesses partnering with a focused Google Ads agency to drive qualified enquiries, bookings and commercial intent directly from Google Search.',
       keyDeliverables: [
         'Campaign & ad-group architecture',
-        'High-CTR ad copy variations',
-        'Conversion tracking verification',
-        'Ongoing ROAS reporting',
+        'High-relevance ad copy variations',
+        'Verified conversion tracking setup',
+        'Ongoing campaign performance reporting',
       ],
+      relatedLinkHref: '/blog/google-meta-click-to-whatsapp-funnel',
+      relatedLinkLabel: 'Google & Meta Ads Lead Funnel Guide',
+      pairServiceId: 'website-landing-page-design',
+      pairServiceLabel: 'Pair with Website & Landing Page Design',
     },
     {
       id: 'meta-ads-whatsapp-advertising',
@@ -153,25 +173,30 @@
       category: 'paid',
       shortLabel: 'Meta & WhatsApp',
       title: 'Meta Ads & WhatsApp Advertising',
+      primaryKeyword: 'Meta Ads Management Services',
       shortDesc:
-        'Generate qualified leads and instant customer conversations through Facebook, Instagram and click-to-WhatsApp campaigns.',
+        'Generate qualified enquiries and direct conversations with full-funnel Meta Ads management services covering Facebook Ads management, Instagram Ads management and WhatsApp marketing services.',
       iconName: 'share2',
       whatsIncluded: [
-        'Meta full-funnel campaign strategy',
-        'Precision lookalike & interest targeting',
-        'Scroll-stopping ad creative production',
-        'Click-to-WhatsApp enquiry flows',
+        'Facebook Ads & Instagram Ads campaign setup',
+        'Custom, interest & lookalike audience targeting',
+        'Conversion-focused static & video ad creatives',
+        'Click-to-WhatsApp enquiry funnel configuration',
       ],
       problemsAddressed:
-        'Low-quality leads, ad fatigue and friction between ad clicks and real customer conversations.',
+        'Unqualified enquiries, creative ad fatigue and unnecessary friction between a user clicking a social ad and starting a real conversation.',
       whoBenefits:
-        'Service and D2C brands scaling daily enquiries through Instagram, Facebook and WhatsApp.',
+        'Service businesses, local brands and e-commerce companies scaling daily customer conversations across Facebook, Instagram and WhatsApp.',
       keyDeliverables: [
-        'Funnel & campaign structure',
-        'Static & video ad creatives',
-        'WhatsApp lead-capture flow',
-        'Weekly performance analytics',
+        'Meta campaign & audience structure',
+        'Tailored ad creatives & copy variations',
+        'Click-to-WhatsApp lead-capture flow',
+        'Regular cost-per-lead & funnel reporting',
       ],
+      relatedLinkHref: '/blog/google-meta-click-to-whatsapp-funnel',
+      relatedLinkLabel: 'Meta & Click-to-WhatsApp Funnel Guide',
+      pairServiceId: 'graphic-design',
+      pairServiceLabel: 'Pair with Graphic Design',
     },
     {
       id: 'website-landing-page-design',
@@ -179,51 +204,61 @@
       category: 'web',
       shortLabel: 'Web Design',
       title: 'Website & Landing Page Design',
+      primaryKeyword: 'Website Design Services',
       shortDesc:
-        'High-converting custom websites and focused campaign landing pages engineered to turn traffic into qualified enquiries.',
+        'Turn website visitors into enquiries with custom website design services, mobile-responsive business website design and conversion-focused landing page design services.',
       iconName: 'layout',
       whatsIncluded: [
-        'Custom UI/UX & brand-led visual design',
-        'Responsive desktop & mobile build',
-        'Conversion-focused landing page copy',
-        'Form, speed & CTA optimization',
+        'Custom UI/UX & brand-led visual layouts',
+        'Mobile-first responsive business website build',
+        'Conversion-focused landing page copy & structure',
+        'Speed, SEO structure, form & CTA optimization',
       ],
       problemsAddressed:
-        'Outdated websites, poor mobile experiences and generic templates that leak paid & organic traffic.',
+        'Outdated websites, slow mobile loading, confusing navigation and generic templates that lose potential leads from search and paid campaigns.',
       whoBenefits:
-        'Businesses launching, redesigning or scaling campaign-specific landing experiences.',
+        'Businesses launching a new site, upgrading their brand credibility or creating dedicated landing pages for Google Ads and Meta Ads campaigns.',
       keyDeliverables: [
-        'Custom UI/UX concepts',
-        'Live responsive website / landing page',
-        'Lead-capture form integration',
-        'Launch & handover guide',
+        'Custom UI/UX layout concepts',
+        'Responsive live website or landing page',
+        'Lead-capture & WhatsApp form integration',
+        'Launch checklist & handover guide',
       ],
+      relatedLinkHref: '/blog/conversion-engineered-landing-page-patterns',
+      relatedLinkLabel: 'Conversion Landing Page UX Guide',
+      pairServiceId: 'seo-optimization',
+      pairServiceLabel: 'Pair with SEO Optimization',
     },
     {
       id: 'video-reel-creation-editing',
       number: '07',
       category: 'brand',
       shortLabel: 'Video & Reels',
-      title: 'Video & Reel Creation and Editing',
+      title: 'Video & Reel Creation & Editing',
+      primaryKeyword: 'Video Editing Services',
       shortDesc:
-        'Create high-retention short-form videos and reels with strong hooks, dynamic editing and platform-ready formatting.',
+        'Hold viewer attention with retention-focused video editing services, dynamic reels editing services and end-to-end social media video production built for modern feeds.',
       iconName: 'clapperboard',
       whatsIncluded: [
-        'Hook-driven video concepts & scripts',
-        'Dynamic reel editing & pacing',
-        'Kinetic captions and motion typography',
-        'Sound design, music & color polish',
+        'Hook-driven video concepts & scripting',
+        'Fast-paced reels editing & visual pacing',
+        'Kinetic captions & on-brand motion text',
+        'Clean audio balance, music & color polish',
       ],
       problemsAddressed:
-        'Low watch time, inconsistent video presence and edits that lose viewer attention in the first 3 seconds.',
+        'Low watch completion, inconsistent video branding and edits that lose audience attention within the opening seconds of a reel or ad.',
       whoBenefits:
-        'Brands scaling reach and authority across Instagram Reels, YouTube Shorts and paid video ads.',
+        'Brands and founders scaling organic visibility and ad performance across Instagram Reels, YouTube Shorts, Facebook Video and short-form ad creatives.',
       keyDeliverables: [
-        'Video concept & script plan',
-        'Edited HD videos & reels',
-        'Platform-ready aspect exports',
-        'Custom cover thumbnails',
+        'Short-form video & reel concept plan',
+        'Edited HD social videos & reels',
+        'Platform-ready vertical & square exports',
+        'Custom cover thumbnails for feeds',
       ],
+      relatedLinkHref: '/blog/short-form-reels-three-second-hook-playbook',
+      relatedLinkLabel: 'Short-Form Reels Hook Playbook',
+      pairServiceId: 'social-media-marketing',
+      pairServiceLabel: 'Pair with Social Media Marketing',
     },
     {
       id: 'graphic-design',
@@ -231,25 +266,30 @@
       category: 'brand',
       shortLabel: 'Graphic Design',
       title: 'Graphic Design',
+      primaryKeyword: 'Graphic Design Services',
       shortDesc:
-        'Sharp, on-brand visual communication — social creatives, campaign banners, posters and ad graphics crafted for instant authority.',
+        'Elevate brand consistency across every touchpoint with agency-grade graphic design services, professional graphic design and conversion-ready business graphic design.',
       iconName: 'palette',
       whatsIncluded: [
-        'Social media & campaign creatives',
-        'Posters, banners and digital flyers',
-        'High-converting ad visuals & thumbnails',
-        'Marketing decks & print collateral',
+        'Social media & campaign graphic assets',
+        'Digital posters, banners & promotional flyers',
+        'Ad visuals, carousel decks & video thumbnails',
+        'Brand-aligned marketing & presentation collateral',
       ],
       problemsAddressed:
-        'Inconsistent or amateur visuals that weaken brand perception and lower ad click-through rates.',
+        'Inconsistent visual quality, off-brand promotional graphics and low-impact creatives that reduce brand credibility and ad click-through engagement.',
       whoBenefits:
-        'Growing brands needing a steady stream of cohesive, agency-grade graphic assets.',
+        'Growing businesses seeking dependable business graphic design support for ongoing social campaigns, paid ads, launches and digital promotions.',
       keyDeliverables: [
-        'Editable source & HD export files',
-        'Multi-platform sized variations',
-        'Reusable design templates',
-        'Structured revision rounds',
+        'High-resolution export & editable source files',
+        'Multi-platform sized visual variations',
+        'Consistent brand-aligned design templates',
+        'Structured review & refinement rounds',
       ],
+      relatedLinkHref: '/industries',
+      relatedLinkLabel: 'Industries We Design & Market For',
+      pairServiceId: 'meta-ads-whatsapp-advertising',
+      pairServiceLabel: 'Pair with Meta Ads & WhatsApp Advertising',
     },
   ];
 
@@ -953,12 +993,12 @@
     if (variant === 'footer') {
       return `
         <span class="inline-flex items-center bg-white rounded-[2px] px-3.5 py-2 shadow-lg">
-          <img src="/assets/jexora-logo.png" alt="JEXORA SOLUTIONS Logo" class="h-11 w-auto object-contain" />
+          <img src="/assets/jexora-logo.png" alt="JEXORA SOLUTIONS — International Digital Marketing Agency and Services Logo" class="h-11 w-auto object-contain" />
         </span>
       `;
     }
     return `
-      <img src="/assets/jexora-logo.png" alt="JEXORA SOLUTIONS Logo" class="h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.03]" />
+      <img src="/assets/jexora-logo.png" alt="JEXORA SOLUTIONS — International Digital Marketing Agency and Services Logo" class="h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.03]" />
     `;
   }
 
@@ -979,9 +1019,8 @@
         desc: 'Meet JEXORA SOLUTIONS and founder Jigyasa Sahu. We help businesses strengthen their online presence, reach relevant audiences and grow their brands.',
       },
       '/services': {
-        title:
-          'Our Services | JEXORA SOLUTIONS — Everything Your Brand Needs to Grow Online',
-        desc: 'Eight specialist digital marketing services: SEO Optimization, AEO & GEO Optimization, Social Media Marketing, Google Ads, Meta Ads & WhatsApp, Web Design, Video & Reels, and Graphic Design.',
+        title: 'Digital Marketing Services | JEXORA SOLUTIONS',
+        desc: 'Explore professional digital marketing services including SEO, AEO, GEO, social media marketing, Google Ads, Meta Ads, web design, video editing and graphic design.',
       },
       '/industries': {
         title:
@@ -2150,17 +2189,17 @@
       <main>
         ${renderPageBanner(
           'SERVICES',
-          'EIGHT SPECIALIST CAPABILITIES',
-          'Everything Your Brand Needs to Grow Online',
-          'Eight specialist services engineered to work together seamlessly. Organic social media and paid advertising are offered transparently as separate services.'
+          'FULL-SERVICE DIGITAL MARKETING SOLUTIONS',
+          'Digital Marketing Services Built for Sustainable Growth',
+          'Explore professional digital marketing services engineered to help businesses grow online worldwide. Our international digital marketing services unite search visibility, paid acquisition, custom web design and creative production — with organic social media and paid advertising always offered transparently as separate services.'
         )}
 
-        <div id="services-sticky-nav" class="sticky top-[72px] z-30 bg-[#143992]/95 backdrop-blur-md border-b border-white/15 shadow-lg">
+        <nav id="services-sticky-nav" aria-label="Digital Marketing Services Quick Navigation" class="sticky top-[72px] z-30 bg-[#143992]/95 backdrop-blur-md border-b border-white/15 shadow-lg">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <div class="ds-no-scrollbar flex flex-nowrap md:flex-wrap overflow-x-auto items-center gap-2">
               ${SERVICES_DATA.map(
                 (s) => `
-                <a href="#${s.id}" class="shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 bg-white/5 hover:bg-[#1D58C8] text-white/85 hover:text-white border border-white/15 hover:border-[#00B8FF] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] transition-all">
+                <a href="#${s.id}" title="${s.title} — ${s.primaryKeyword}" class="shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 bg-white/5 hover:bg-[#1D58C8] text-white/85 hover:text-white border border-white/15 hover:border-[#00B8FF] px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] transition-all">
                   <span class="text-[#00B8FF]">${s.number}</span>
                   <span>${s.shortLabel}</span>
                 </a>
@@ -2168,27 +2207,27 @@
               ).join('')}
             </div>
           </div>
-        </div>
+        </nav>
 
-        <section class="bg-[#F2F7FF] text-[#0E2A6E] py-14 sm:py-20">
+        <section aria-label="Eight Specialist Digital Marketing Services" class="bg-[#F2F7FF] text-[#0E2A6E] py-14 sm:py-20">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             ${SERVICES_DATA.map(
               (s) => `
               <article id="${s.id}" class="scroll-mt-36 bg-white border border-[#D5E3F8] border-t-4 border-t-[#1D58C8] shadow-md overflow-hidden">
                 <div class="bg-[#0E2A6E] text-white px-6 sm:px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-[#1D58C8]/30 border border-[#00B8FF]/50 flex items-center justify-center text-[#00B8FF] shrink-0">
+                    <div class="w-12 h-12 bg-[#1D58C8]/30 border border-[#00B8FF]/50 flex items-center justify-center text-[#00B8FF] shrink-0" aria-hidden="true">
                       ${getSvgIcon(s.iconName, 'w-5 h-5')}
                     </div>
                     <div>
-                      <p class="ds-eyebrow">SERVICE ${s.number}</p>
+                      <p class="ds-eyebrow">SERVICE ${s.number} · ${s.primaryKeyword.toUpperCase()}</p>
                       <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-0.5">${s.title}</h2>
-                      <p class="text-xs sm:text-sm text-white/75 mt-1 max-w-2xl">${s.shortDesc}</p>
+                      <p class="text-xs sm:text-sm text-white/80 mt-1.5 max-w-2xl leading-relaxed">${s.shortDesc}</p>
                     </div>
                   </div>
                   <a href="/contact?service=${encodeURIComponent(
                     s.title
-                  )}" data-link class="ds-btn-gradient px-5 py-3 shrink-0">
+                  )}" data-link aria-label="Enquire about ${s.title}" class="ds-btn-gradient px-5 py-3 shrink-0">
                     <span>ENQUIRE NOW</span>
                     ${getSvgIcon('chevronRight', 'w-4 h-4')}
                   </a>
@@ -2237,11 +2276,38 @@
                     </ul>
                   </div>
                 </div>
+
+                <div class="px-6 sm:px-8 py-3.5 bg-[#F2F7FF]/70 border-t border-[#D5E3F8] flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <a href="${s.relatedLinkHref}" data-link class="inline-flex items-center gap-1.5 font-bold text-[#1D58C8] hover:text-[#0E2A6E] transition-colors">
+                    ${getSvgIcon('fileText', 'w-3.5 h-3.5')}
+                    <span>Related Resource: ${s.relatedLinkLabel}</span>
+                    ${getSvgIcon('arrowRight', 'w-3.5 h-3.5')}
+                  </a>
+                  <a href="#${s.pairServiceId}" class="inline-flex items-center gap-1.5 font-semibold text-[#4B638C] hover:text-[#1D58C8] transition-colors">
+                    <span>${s.pairServiceLabel}</span>
+                    ${getSvgIcon('chevronRight', 'w-3.5 h-3.5')}
+                  </a>
+                </div>
               </article>
             `
             ).join('')}
 
-            <div class="pt-6">${renderEmbeddedCtaStrip()}</div>
+            <!-- Internal Navigation & Semantic Summary Strip -->
+            <div class="bg-white border border-[#D5E3F8] border-l-4 border-l-[#1D58C8] p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+              <div class="space-y-2 max-w-2xl">
+                <p class="ds-eyebrow-dark">ONLINE MARKETING SERVICES · WORLDWIDE DELIVERY</p>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-[#0E2A6E]">Need Tailored Digital Marketing Solutions for Your Industry?</h2>
+                <p class="text-xs sm:text-sm text-[#4B638C] leading-relaxed">
+                  Explore how our full-service digital marketing capabilities adapt across <a href="/industries" data-link class="font-bold text-[#1D58C8] underline underline-offset-2 hover:text-[#0E2A6E]">8 specialized industries</a>, browse common questions on our <a href="/faq" data-link class="font-bold text-[#1D58C8] underline underline-offset-2 hover:text-[#0E2A6E]">Services FAQ</a>, learn more <a href="/about" data-link class="font-bold text-[#1D58C8] underline underline-offset-2 hover:text-[#0E2A6E]">about JEXORA SOLUTIONS</a>, or read actionable playbooks on our <a href="/blog" data-link class="font-bold text-[#1D58C8] underline underline-offset-2 hover:text-[#0E2A6E]">Digital Marketing Blog</a>.
+                </p>
+              </div>
+              <a href="/contact" data-link class="ds-btn-gradient px-6 py-3.5 shrink-0">
+                <span>GET A FREE CONSULTATION</span>
+                ${getSvgIcon('chevronRight', 'w-4 h-4')}
+              </a>
+            </div>
+
+            <div class="pt-6">${renderEmbeddedCtaStrip('READY TO GROW WITH PROFESSIONAL DIGITAL MARKETING SERVICES?')}</div>
           </div>
         </section>
       </main>

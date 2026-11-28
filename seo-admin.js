@@ -79,13 +79,13 @@
         label: 'Services (8 Specialist Capabilities)',
         title: 'Digital Marketing Services | JEXORA SOLUTIONS',
         description:
-          'Explore 8 specialist services: SEO, AEO & GEO AI search, Social Media, Google Ads, Meta & WhatsApp Ads, Web Design, Video Reels, and Graphic Design.',
+          'Explore professional digital marketing services including SEO, AEO, GEO, social media marketing, Google Ads, Meta Ads, web design, video editing and graphic design.',
         keywords:
-          'Digital Marketing Services, SEO Agency, AEO GEO Optimization, Google Ads Agency, Meta Ads WhatsApp Funnel, Custom Landing Page Design, Reel Editing, Graphic Design',
+          'Digital Marketing Services, Online Marketing Services, Professional Digital Marketing Services, Full-Service Digital Marketing, International Digital Marketing Services, Digital Marketing Solutions, SEO Services, AEO Services, GEO Services, Social Media Marketing Services, Google Ads Management Services, Meta Ads Management Services, WhatsApp Marketing Services, Website Design Services, Landing Page Design Services, Video Editing Services, Reels Editing Services, Graphic Design Services',
         robots: 'index, follow',
-        ogTitle: '8 Specialist Digital Marketing Services | JEXORA SOLUTIONS',
+        ogTitle: 'Digital Marketing Services | JEXORA SOLUTIONS',
         ogDescription:
-          'Transparent, strategy-first digital marketing services engineered to work together seamlessly.',
+          'Explore professional digital marketing services including SEO, AEO, GEO, social media marketing, Google Ads, Meta Ads, web design, video editing and graphic design.',
         ogImage: 'https://jexorasolutions.com/og-cover.jpg',
         priority: '0.9',
         changefreq: 'monthly',
@@ -336,6 +336,63 @@
     document.head.appendChild(script);
   }
 
+  function updateServicesSchema(pathname, cfg) {
+    const existing = document.getElementById('jexora-services-schema');
+    if (existing) existing.remove();
+    if (pathname !== '/services') return;
+    if (document.getElementById('jexora-static-services-schema')) return;
+    const baseUrl = (cfg.siteUrl || 'https://jexorasolutions.com').replace(/\/+$/, '');
+    const schema = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/` },
+            { '@type': 'ListItem', position: 2, name: 'Digital Marketing Services', item: `${baseUrl}/services` },
+          ],
+        },
+        {
+          '@type': 'Service',
+          '@id': `${baseUrl}/services#digital-marketing-services`,
+          name: 'Digital Marketing Services',
+          serviceType: 'Digital Marketing Services',
+          url: `${baseUrl}/services`,
+          description:
+            'Explore professional digital marketing services including SEO, AEO, GEO, social media marketing, Google Ads, Meta Ads, web design, video editing and graphic design.',
+          areaServed: 'Worldwide',
+          provider: {
+            '@type': 'ProfessionalService',
+            '@id': `${baseUrl}/#organization`,
+            name: cfg.siteName || 'JEXORA SOLUTIONS',
+            url: `${baseUrl}/`,
+            email: 'solutionsjexora@gmail.com',
+            telephone: '+91-74278-37194',
+          },
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'JEXORA SOLUTIONS — 8 Specialist Digital Marketing Services',
+            itemListElement: [
+              { '@type': 'Offer', position: 1, itemOffered: { '@type': 'Service', name: 'SEO Optimization', serviceType: 'SEO Services', url: `${baseUrl}/services#seo-optimization`, description: 'Professional SEO services including technical SEO audits, keyword mapping, on-page SEO and authority strategy.' } },
+              { '@type': 'Offer', position: 2, itemOffered: { '@type': 'Service', name: 'AEO & GEO Optimization', serviceType: 'AEO Services & GEO Services', url: `${baseUrl}/services#aeo-geo-optimization`, description: 'Answer Engine Optimization and Generative Engine Optimization for AI search citations and entity authority.' } },
+              { '@type': 'Offer', position: 3, itemOffered: { '@type': 'Service', name: 'Social Media Marketing', serviceType: 'Social Media Marketing Services', url: `${baseUrl}/services#social-media-marketing`, description: 'Organic social media management, monthly content calendars, custom visuals and active community engagement.' } },
+              { '@type': 'Offer', position: 4, itemOffered: { '@type': 'Service', name: 'Google Ads Management', serviceType: 'Google Ads Management Services', url: `${baseUrl}/services#google-ads-management`, description: 'Targeted Google PPC advertising, high-intent keyword strategy, ad copywriting and verified conversion tracking.' } },
+              { '@type': 'Offer', position: 5, itemOffered: { '@type': 'Service', name: 'Meta Ads & WhatsApp Advertising', serviceType: 'Meta Ads Management Services', url: `${baseUrl}/services#meta-ads-whatsapp-advertising`, description: 'Facebook Ads management, Instagram Ads management and WhatsApp marketing services for direct lead generation.' } },
+              { '@type': 'Offer', position: 6, itemOffered: { '@type': 'Service', name: 'Website & Landing Page Design', serviceType: 'Website Design Services', url: `${baseUrl}/services#website-landing-page-design`, description: 'Custom mobile-responsive business website design and conversion-focused landing page design services.' } },
+              { '@type': 'Offer', position: 7, itemOffered: { '@type': 'Service', name: 'Video & Reel Creation & Editing', serviceType: 'Video Editing Services', url: `${baseUrl}/services#video-reel-creation-editing`, description: 'Retention-focused video editing services, reels editing services and social media video production.' } },
+              { '@type': 'Offer', position: 8, itemOffered: { '@type': 'Service', name: 'Graphic Design', serviceType: 'Graphic Design Services', url: `${baseUrl}/services#graphic-design`, description: 'Professional graphic design and business graphic design for social creatives, banners, posters and ad visuals.' } },
+            ],
+          },
+        },
+      ],
+    };
+    const script = document.createElement('script');
+    script.id = 'jexora-services-schema';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+
   function applyPageSEO(pathname) {
     if (pathname === '/seo-admin') {
       document.title = 'SEO Command Center | JEXORA SOLUTIONS Admin';
@@ -406,6 +463,7 @@
 
     injectTracking(cfg);
     updateArticleSchema(pathname, cfg);
+    updateServicesSchema(pathname, cfg);
   }
 
   function scorePageSEO(meta) {
