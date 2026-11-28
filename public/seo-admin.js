@@ -64,9 +64,9 @@
         label: 'Home Page',
         title: 'Digital Marketing Agency Worldwide | JEXORA SOLUTIONS',
         description:
-          'JEXORA SOLUTIONS is an international digital marketing agency offering SEO, AEO & GEO, Google & Meta Ads, social media, web design & lead generation services.',
+          'JEXORA SOLUTIONS is an international digital marketing agency offering complete digital marketing services: SEO, paid ads, social media, web design & leads.',
         keywords:
-          'Digital Marketing Agency, Digital Marketing Services, International Digital Marketing Agency, JEXORA SOLUTIONS, SEO Optimization, AEO GEO AI Search, Google Ads Management, Meta Ads, WhatsApp Advertising, Website Design, Video Reel Editing, Graphic Design',
+          'Digital Marketing Agency, Digital Marketing Services, International Digital Marketing Agency, JEXORA SOLUTIONS, SEO, Paid Advertising, Social Media Marketing, Website Design, Lead Generation',
         robots: 'index, follow',
         ogTitle: 'Digital Marketing Agency Helping Businesses Grow Worldwide | JEXORA SOLUTIONS',
         ogDescription:

@@ -970,8 +970,8 @@
     const seoMap = {
       '/': {
         title:
-          'JEXORA SOLUTIONS | Where Technology Meets Possibilities — International Digital Marketing Agency',
-        desc: "We Don't Just Build Brands. We Build Digital Empires. JEXORA SOLUTIONS is an international digital marketing agency helping startups, SMEs and established businesses grow online.",
+          'Digital Marketing Agency Worldwide | JEXORA SOLUTIONS',
+        desc: 'JEXORA SOLUTIONS is an international digital marketing agency offering complete digital marketing services: SEO, paid ads, social media, web design & leads.',
       },
       '/about': {
         title:
