@@ -894,6 +894,10 @@
   let activeDiffIdx = 0;
   let activeMarketIdx = 0;
 
+  function getCurrentPath() {
+    return (window.location.pathname || '/').replace(/\/+$/, '') || '/';
+  }
+
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, '&amp;')
@@ -2877,8 +2881,8 @@
       <!-- Mobile Sticky Frosted Quote Bar (Hidden on /contact & /seo-admin) -->
       ${
         mobileBarDismissed ||
-        window.location.pathname === '/contact' ||
-        window.location.pathname === '/seo-admin'
+        getCurrentPath() === '/contact' ||
+        getCurrentPath() === '/seo-admin'
           ? ''
           : `<div id="mobile-sticky-quote" class="lg:hidden fixed bottom-0 left-0 right-0 z-40 ds-mobile-sticky-bar px-4 py-3 flex items-center justify-between gap-3">
               <a href="/contact" data-link class="ds-btn-gradient flex-grow py-3">
@@ -2919,7 +2923,7 @@
 
   function startHeroTimer() {
     if (slideTimer) clearInterval(slideTimer);
-    if (window.location.pathname === '/') {
+    if (getCurrentPath() === '/') {
       if (!heroImagesPreloaded) {
         heroImagesPreloaded = true;
         HERO_SLIDES.forEach((s) => {
@@ -3467,7 +3471,7 @@
     }
 
     if (
-      window.location.pathname === '/seo-admin' &&
+      getCurrentPath() === '/seo-admin' &&
       window.JexoraSEO &&
       typeof window.JexoraSEO.attachAdminEvents === 'function'
     ) {
@@ -3479,7 +3483,7 @@
     const root = document.getElementById('root');
     if (!root) return;
 
-    const rawPath = window.location.pathname;
+    const rawPath = getCurrentPath();
     const validPaths = ['/', '/about', '/services', '/industries', '/blog', '/faq', '/contact', '/seo-admin'];
     const isBlogDetail =
       rawPath.startsWith('/blog/') &&
@@ -3596,7 +3600,7 @@
   function canShowPopupNow() {
     if (isPopupSubmittedStored()) return false;
     if (getStoredPopupCount() >= POPUP_MAX_PER_USER) return false;
-    if (window.location.pathname === '/contact' || window.location.pathname === '/seo-admin') {
+    if (getCurrentPath() === '/contact' || getCurrentPath() === '/seo-admin') {
       return false;
     }
     if (
@@ -3618,7 +3622,7 @@
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
-    let inServiceSection = window.location.pathname === '/services' && scrollTop > 180;
+    let inServiceSection = getCurrentPath() === '/services' && scrollTop > 180;
     const srvSection = document.getElementById('home-services-section');
     if (srvSection) {
       const rect = srvSection.getBoundingClientRect();
@@ -3836,7 +3840,7 @@
 
     const triggerToast = () => {
       if (
-        window.location.pathname === '/seo-admin' ||
+        getCurrentPath() === '/seo-admin' ||
         document.getElementById('jexora-form-popup')
       ) {
         feedbackTimer = setTimeout(triggerToast, 8000);
@@ -3855,8 +3859,8 @@
   function startEngagementPopups() {
     // Max 2 proposal popups per user (persisted in localStorage, disabled on /contact & /seo-admin)
     if (
-      window.location.pathname !== '/contact' &&
-      window.location.pathname !== '/seo-admin' &&
+      getCurrentPath() !== '/contact' &&
+      getCurrentPath() !== '/seo-admin' &&
       getStoredPopupCount() < POPUP_MAX_PER_USER &&
       !isPopupSubmittedStored()
     ) {
@@ -3885,8 +3889,8 @@
   function bootstrapApp() {
     if (window.JexoraSEO && typeof window.JexoraSEO.init === 'function') {
       window.JexoraSEO.init(BLOG_POSTS, () => {
-        updateSEO(window.location.pathname);
-        if (window.location.pathname === '/seo-admin') renderApp();
+        updateSEO(getCurrentPath());
+        if (getCurrentPath() === '/seo-admin') renderApp();
       });
     }
     renderApp();
