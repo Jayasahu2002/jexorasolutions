@@ -62,15 +62,15 @@
     const pages = {
       '/': {
         label: 'Home Page',
-        title: 'JEXORA SOLUTIONS | Worldwide Digital Marketing Agency',
+        title: 'Digital Marketing Agency Worldwide | JEXORA SOLUTIONS',
         description:
-          'JEXORA SOLUTIONS is a worldwide digital marketing agency growing brands with SEO, AEO & GEO AI search, Google & Meta Ads, custom websites, reels & design.',
+          'JEXORA SOLUTIONS is an international digital marketing agency offering SEO, AEO & GEO, Google & Meta Ads, social media, web design & lead generation services.',
         keywords:
-          'JEXORA SOLUTIONS, Worldwide Digital Marketing Agency, SEO Optimization, AEO GEO AI Search, Google Ads Management, Meta Ads, WhatsApp Advertising, Website Design, Video Reel Editing, Graphic Design',
+          'Digital Marketing Agency, Digital Marketing Services, International Digital Marketing Agency, JEXORA SOLUTIONS, SEO Optimization, AEO GEO AI Search, Google Ads Management, Meta Ads, WhatsApp Advertising, Website Design, Video Reel Editing, Graphic Design',
         robots: 'index, follow',
-        ogTitle: 'JEXORA SOLUTIONS | Worldwide Digital Marketing Agency',
+        ogTitle: 'Digital Marketing Agency Helping Businesses Grow Worldwide | JEXORA SOLUTIONS',
         ogDescription:
-          'Worldwide SEO, AEO & GEO AI search, Google & Meta Ads, custom websites, reels, and graphic design engineered for measurable growth.',
+          'Complete digital marketing services for businesses ready to grow — SEO, AEO & GEO AI search, Google & Meta Ads, social media, custom web design & lead generation.',
         ogImage: 'https://jexorasolutions.com/og-cover.jpg',
         priority: '1.0',
         changefreq: 'weekly',
@@ -357,7 +357,12 @@
     document.title = pageMeta.title || cfg.pages['/'].title;
     setMetaTag('meta[name="description"]', 'name', 'description', pageMeta.description || '');
     setMetaTag('meta[name="keywords"]', 'name', 'keywords', pageMeta.keywords || '');
-    setMetaTag('meta[name="robots"]', 'name', 'robots', pageMeta.robots || 'index, follow');
+    const rawRobots = pageMeta.robots || 'index, follow';
+    const fullRobots =
+      rawRobots === 'index, follow'
+        ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+        : rawRobots;
+    setMetaTag('meta[name="robots"]', 'name', 'robots', fullRobots);
 
     let canon = document.querySelector('link[rel="canonical"]');
     if (!canon) {
