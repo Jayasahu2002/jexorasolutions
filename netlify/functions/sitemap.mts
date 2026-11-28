@@ -7,6 +7,7 @@ const DEFAULT_ROUTES: Array<{ route: string; changefreq: string; priority: strin
   { route: "/services", changefreq: "monthly", priority: "0.9" },
   { route: "/industries", changefreq: "monthly", priority: "0.8" },
   { route: "/blog", changefreq: "weekly", priority: "0.85" },
+  { route: "/faq", changefreq: "monthly", priority: "0.8" },
   { route: "/about", changefreq: "monthly", priority: "0.8" },
   { route: "/contact", changefreq: "monthly", priority: "0.9" },
   { route: "/blog/aeo-geo-ai-search-guide-2026", changefreq: "monthly", priority: "0.75" },

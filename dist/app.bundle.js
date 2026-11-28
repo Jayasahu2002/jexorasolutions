@@ -937,6 +937,7 @@
       star: `<svg class="${cls}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
       fileText: `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>`,
       phone: `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+      mail: `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
     };
     return icons[name] || icons.search;
   }
@@ -982,8 +983,13 @@
       },
       '/blog': {
         title:
-          'Blog & Digital Growth Insights | JEXORA SOLUTIONS — SEO, AEO/GEO, Ads & Web Playbooks',
-        desc: 'Read practical digital marketing playbooks from JEXORA SOLUTIONS covering SEO, AEO & GEO AI search, Google & Meta Ads, high-converting web design, and reels.',
+          'Digital Growth Blog & Playbooks | JEXORA SOLUTIONS',
+        desc: 'Actionable guides from JEXORA SOLUTIONS on SEO, AEO & GEO AI search, Google & Meta Ads, Click-to-WhatsApp funnels, high-converting web UX, and reels.',
+      },
+      '/faq': {
+        title:
+          'Frequently Asked Questions | JEXORA SOLUTIONS Agency',
+        desc: 'Clear answers about JEXORA SOLUTIONS digital marketing services, worldwide delivery, AEO & GEO AI search, timelines, pricing transparency, and consultations.',
       },
       '/contact': {
         title:
@@ -1072,7 +1078,7 @@
           </a>
 
           <nav class="hidden lg:flex items-center gap-6 xl:gap-7" aria-label="Main Navigation">
-            <a href="/" data-link class="ds-nav-link ${pathname === '/' && window.location.hash !== '#faq' ? 'is-active' : ''}">HOME</a>
+            <a href="/" data-link class="ds-nav-link ${pathname === '/' ? 'is-active' : ''}">HOME</a>
 
             <div class="ds-mega-trigger">
               <a href="/services" data-link class="ds-nav-link ${pathname === '/services' ? 'is-active' : ''}">
@@ -1113,7 +1119,7 @@
 
             <a href="/industries" data-link class="ds-nav-link ${pathname === '/industries' ? 'is-active' : ''}">INDUSTRIES</a>
             <a href="/blog" data-link class="ds-nav-link ${pathname === '/blog' || pathname.startsWith('/blog/') ? 'is-active' : ''}">BLOG</a>
-            <a href="/#faq" data-link class="ds-nav-link ${pathname === '/' && window.location.hash === '#faq' ? 'is-active' : ''}">FAQ</a>
+            <a href="/faq" data-link class="ds-nav-link ${pathname === '/faq' ? 'is-active' : ''}">FAQ</a>
             <a href="/about" data-link class="ds-nav-link ${pathname === '/about' ? 'is-active' : ''}">ABOUT US</a>
             <a href="/contact" data-link class="ds-nav-link ${pathname === '/contact' ? 'is-active' : ''}">CONTACT</a>
           </nav>
@@ -1150,15 +1156,13 @@
               { label: 'Services', path: '/services' },
               { label: 'Industries', path: '/industries' },
               { label: 'Blog', path: '/blog' },
-              { label: 'FAQ', path: '/#faq' },
+              { label: 'FAQ', path: '/faq' },
               { label: 'About Us', path: '/about' },
               { label: 'Contact', path: '/contact' },
             ]
               .map((item) => {
                 const isActive =
-                  (item.path === '/#faq' && pathname === '/' && window.location.hash === '#faq') ||
-                  (item.path === '/' && pathname === '/' && window.location.hash !== '#faq') ||
-                  (item.path !== '/' && item.path !== '/#faq' && pathname === item.path) ||
+                  pathname === item.path ||
                   (item.path === '/blog' && pathname.startsWith('/blog/'));
                 return `
                   <a href="${item.path}" data-link class="px-3.5 py-3 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-between border-b border-[#EEF4FD] ${
@@ -1821,9 +1825,9 @@
         </section>
 
         <!-- ===============================================================
-             BAND 2: FEATURED GROWTH BLUEPRINTS (OBSIDIAN BLACK + FILTERS)
+             BAND 2: FEATURED GROWTH BLUEPRINTS (SAPPHIRE BLUE + FILTERS)
              =============================================================== -->
-        <section class="ds-sapphire-band text-white pt-20 sm:pt-24 pb-36 relative overflow-hidden">
+        <section class="ds-sapphire-band text-white py-16 sm:py-20 lg:py-24 relative overflow-hidden">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto space-y-3 mb-10">
               <p class="ds-eyebrow">SEE OUR CAPABILITIES IN ACTION</p>
@@ -1862,188 +1866,7 @@
         </section>
 
         <!-- ===============================================================
-             BAND 3: OVERLAPPING SEAM FOUNDER & VISION QUOTE CARD
-             =============================================================== -->
-        <section class="relative z-20 -mt-20 -mb-20 px-4 sm:px-6 lg:px-8">
-          <div class="max-w-5xl mx-auto ds-quote-seam p-8 sm:p-12 text-white relative overflow-hidden">
-            <div class="absolute top-4 right-8 text-[110px] leading-none font-extrabold text-[#00B8FF]/15 select-none pointer-events-none">&rdquo;</div>
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
-              <div class="md:col-span-8 space-y-4">
-                <p class="ds-eyebrow">OUR FOUNDER'S VISION</p>
-                <blockquote class="text-lg sm:text-xl font-bold text-white leading-relaxed">
-                  "To be a creative and digital power that goes beyond launching brands — shaping an unforgettable legacy in the market and the hearts of people for generations."
-                </blockquote>
-                <a href="/about" data-link class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#00B8FF] hover:text-white transition-colors pt-1">
-                  <span>MEET FOUNDER JIGYASA SAHU</span>
-                  ${getSvgIcon('chevronsRight', 'w-4 h-4')}
-                </a>
-              </div>
-              <div class="md:col-span-4 flex items-center md:justify-end gap-4">
-                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#00B8FF] shrink-0 bg-white">
-                  <img src="/assets/founder-jigyasa-sahu.jpg" alt="Jigyasa Sahu — Founder" class="w-full h-full object-cover object-top" />
-                </div>
-                <div>
-                  <p class="text-sm font-extrabold text-white">Jigyasa Sahu</p>
-                  <p class="text-xs text-[#00B8FF] font-semibold">Founder · JEXORA SOLUTIONS</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===============================================================
-             BAND 4: DUAL-ROW FROSTED GLASS EXPERTISE MARQUEE
-             =============================================================== -->
-        <section class="ds-royal-band text-white pt-32 pb-20 relative overflow-hidden">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2 mb-12">
-            <p class="ds-eyebrow">FULL-SERVICE CAPABILITY MATRIX</p>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Specialist Services &amp; Industries Across Borders</h2>
-          </div>
-
-          <div class="space-y-4">
-            <div class="ds-marquee-wrap">
-              <div class="ds-marquee-track gap-4">
-                ${[...SERVICES_DATA, ...SERVICES_DATA]
-                  .map(
-                    (s) => `
-                  <a href="/services#${s.id}" data-link class="w-64 shrink-0 bg-[#0E2A6E]/55 backdrop-blur-md border border-white/15 hover:border-[#00B8FF] p-5 transition-colors block">
-                    <div class="flex items-center justify-between mb-3">
-                      <span class="text-[#00B8FF]">${getSvgIcon(s.iconName, 'w-5 h-5')}</span>
-                      <span class="text-[10px] font-bold tracking-[0.2em] text-white/45">${s.number}</span>
-                    </div>
-                    <p class="text-sm font-bold text-white">${s.title}</p>
-                    <p class="text-[11px] text-white/60 mt-1 line-clamp-1">${s.whatsIncluded[0]}</p>
-                  </a>
-                `
-                  )
-                  .join('')}
-              </div>
-            </div>
-
-            <div class="ds-marquee-wrap">
-              <div class="ds-marquee-track-reverse gap-4">
-                ${[...INDUSTRIES_DATA, ...INDUSTRIES_DATA]
-                  .map(
-                    (ind) => `
-                  <a href="/industries#${ind.id}" data-link class="w-64 shrink-0 bg-[#0E2A6E]/45 backdrop-blur-md border border-white/15 hover:border-[#00B8FF] p-5 transition-colors block">
-                    <div class="flex items-center justify-between mb-2">
-                      <span class="text-[#00B8FF]">${getSvgIcon(ind.iconName, 'w-5 h-5')}</span>
-                      <span class="text-[10px] font-bold uppercase tracking-[0.14em] text-[#00B8FF]/80">${ind.focusTag}</span>
-                    </div>
-                    <p class="text-sm font-bold text-white">${ind.title}</p>
-                  </a>
-                `
-                  )
-                  .join('')}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===============================================================
-             BAND 5: INDUSTRIES SERVED EDITORIAL CAROUSEL (LIGHT ICE BASE)
-             =============================================================== -->
-        <section class="bg-[#F2F7FF] text-[#0E2A6E] py-16 sm:py-20 lg:py-24">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            ${renderEmbeddedCtaStrip()}
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-              <div class="lg:col-span-7 space-y-2">
-                <p class="ds-eyebrow-dark">INDUSTRIES WE SERVE</p>
-                <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0E2A6E] leading-[1.12]">
-                  Digital Marketing Built For <span class="ds-gradient-text">Every High-Growth Industry</span>
-                </h2>
-              </div>
-              <div class="lg:col-span-5">
-                <p class="text-sm text-[#475569] leading-relaxed">
-                  We adapt channels, visual direction, and buyer funnels around how customers actually discover and choose businesses in your sector.
-                </p>
-              </div>
-            </div>
-
-            <!-- Interactive Editorial Industry Carousel -->
-            <div class="space-y-4">
-              <div id="industry-carousel-stage">
-                ${renderIndustryCarouselContent(activeIndustryIdx)}
-              </div>
-
-              <!-- 8-Industry Selector Pill Strip -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
-                ${INDUSTRIES_DATA.map(
-                  (ind, i) => `
-                  <button type="button" data-ind-idx="${i}" class="p-3 text-left bg-white border transition-all ${
-                    i === activeIndustryIdx
-                      ? 'border-[#00B8FF] bg-[#0E2A6E] text-white shadow-lg ring-1 ring-[#00B8FF]'
-                      : 'border-[#D5E3F8] text-[#0E2A6E] hover:border-[#1D58C8]'
-                  }">
-                    <span class="block text-[10px] font-bold tracking-[0.16em] ${
-                      i === activeIndustryIdx ? 'text-[#00B8FF]' : 'text-[#1D58C8]'
-                    }">0${i + 1}</span>
-                    <span class="block text-[11px] font-bold mt-0.5 leading-snug">${ind.title}</span>
-                  </button>
-                `
-                ).join('')}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===============================================================
-             BAND 6: EXPLORE OUR 8 SPECIALIST SERVICES (CRISP PURE WHITE)
-             =============================================================== -->
-        <section id="home-services-section" class="bg-white text-[#0E2A6E] py-20 sm:py-24 border-t border-[#D5E3F8]">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-              <div class="lg:col-span-7 space-y-2">
-                <p class="ds-eyebrow-dark">WHY JEXORA SOLUTIONS?</p>
-                <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold ds-gradient-text leading-tight">
-                  Explore Our 8 Specialist Services
-                </h2>
-              </div>
-              <div class="lg:col-span-5">
-                <p class="text-sm text-[#475569] leading-relaxed">
-                  Select any capability below to inspect deliverables, problems solved, and execution scope — organic social and paid ads are always transparently separated.
-                </p>
-              </div>
-            </div>
-
-            <!-- Interactive Horizontal Service Tabs -->
-            <div class="border-b border-[#D5E3F8]">
-              <div class="ds-no-scrollbar flex flex-nowrap overflow-x-auto gap-1 pb-0">
-                ${SERVICES_DATA.map(
-                  (s, i) => `
-                  <button type="button" data-srv-idx="${i}" class="shrink-0 whitespace-nowrap inline-flex items-center gap-2 px-4 py-3.5 text-xs font-bold border-b-2 transition-all ${
-                    i === activeServiceIdx
-                      ? 'border-[#00B8FF] text-[#0E2A6E] bg-[#F2F7FF]'
-                      : 'border-transparent text-[#64748B] hover:text-[#0E2A6E] hover:bg-[#F8FAFD]'
-                  }">
-                    <span class="${
-                      i === activeServiceIdx ? 'text-[#1D58C8]' : 'text-[#94A3B8]'
-                    }">${getSvgIcon(s.iconName, 'w-4 h-4')}</span>
-                    <span>${s.shortLabel}</span>
-                    ${
-                      i === activeServiceIdx
-                        ? '<span class="w-1.5 h-1.5 rounded-full bg-[#00B8FF]"></span>'
-                        : ''
-                    }
-                  </button>
-                `
-                ).join('')}
-              </div>
-            </div>
-
-            <div id="service-tab-stage">
-              ${renderServicePanelContent(activeServiceIdx)}
-            </div>
-
-            <div class="pt-6">
-              ${renderEmbeddedCtaStrip('READY TO COMBINE SERVICES INTO ONE UNIFIED PLAN?')}
-            </div>
-          </div>
-        </section>
-
-        <!-- ===============================================================
-             BAND 7: 4-STEP CONNECTED GROWTH PROCESS (CRISP PURE WHITE)
+             BAND 3: 4-STEP CONNECTED GROWTH PROCESS (CRISP PURE WHITE)
              =============================================================== -->
         <section class="bg-white text-[#0E2A6E] py-16 sm:py-20 lg:py-24 border-t border-[#D5E3F8]">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2195,103 +2018,6 @@
                 </div>
               `;
               }).join('')}
-            </div>
-          </div>
-        </section>
-
-        <!-- ===============================================================
-             BAND 9B: LATEST INSIGHTS & DIGITAL GROWTH BLOG (CRISP ICE/WHITE)
-             =============================================================== -->
-        <section class="bg-[#F2F7FF] text-[#0E2A6E] py-16 sm:py-20 lg:py-24 border-t border-[#D5E3F8]">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div class="space-y-2 max-w-2xl">
-                <p class="ds-eyebrow-dark">INSIGHTS &amp; PLAYBOOKS</p>
-                <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0E2A6E] leading-tight">
-                  Latest From Our <span class="ds-gradient-text">Digital Growth Blog</span>
-                </h2>
-                <p class="text-sm text-[#4B638C] leading-relaxed">
-                  Actionable guides on SEO, AEO &amp; GEO AI search, Google &amp; Meta Ads, high-converting websites, and short-form video strategy.
-                </p>
-              </div>
-              <a href="/blog" data-link class="ds-btn-outline-blue px-6 py-3.5 shrink-0">
-                <span>VIEW ALL ARTICLES</span>
-                ${getSvgIcon('chevronRight', 'w-4 h-4')}
-              </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              ${renderBlogCardsGrid(BLOG_POSTS.slice(0, 3))}
-            </div>
-          </div>
-        </section>
-
-        <!-- ===============================================================
-             BAND 9C: FREQUENTLY ASKED QUESTIONS (CRISP PURE WHITE)
-             =============================================================== -->
-        ${renderFaqSection()}
-
-        <!-- ===============================================================
-             BAND 10: DARK CONVERSATION & LEAD CAPTURE BAND (SAPPHIRE BLUE)
-             =============================================================== -->
-        <section class="ds-sapphire-band text-white py-20 sm:py-24 relative overflow-hidden border-t border-white/10">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              <div class="lg:col-span-5 space-y-6">
-                <p class="ds-eyebrow">START A CONVERSATION</p>
-                <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white leading-[1.12]">
-                  Take The Smart Road To <span class="ds-gradient-text-light block mt-1">Scaling Your Brand Online</span>
-                </h2>
-                <p class="text-sm text-white/75 leading-relaxed">
-                  Whether you are launching a startup, refreshing your website, or scaling multi-country lead generation, our strategy team is ready to map out your next move.
-                </p>
-
-                <div class="space-y-4 pt-2 border-t border-white/10">
-                  <a href="${SOCIAL_LINKS.whatsappBase}?text=Hello%20JEXORA%20SOLUTIONS%2C%20let%27s%20discuss%20our%20digital%20growth." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-sm font-bold text-white hover:text-[#4ADE80] transition-colors">
-                    <span class="w-10 h-10 bg-[#25D366] border border-white/40 flex items-center justify-center text-white shadow-lg"><span class="ds-wa-icon-anim">${getSvgIcon('whatsapp', 'w-5 h-5 text-white')}</span></span>
-                    <span>Direct WhatsApp Strategy Desk</span>
-                  </a>
-                  <div class="flex items-center gap-3 pt-1">
-                    <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">FOLLOW US</span>
-                    <a href="${SOCIAL_LINKS.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 border border-white/20 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('facebook', 'w-4 h-4')}</a>
-                    <a href="${SOCIAL_LINKS.instagram}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 border border-white/20 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('instagram', 'w-4 h-4')}</a>
-                    <a href="${SOCIAL_LINKS.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 border border-white/20 hover:border-[#00B8FF] hover:text-[#00B8FF] flex items-center justify-center text-white transition-colors">${getSvgIcon('linkedin', 'w-4 h-4')}</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="lg:col-span-7">
-                <div id="bottom-lead-container" class="bg-[#143992]/90 backdrop-blur-md border border-white/15 border-t-4 border-t-[#00B8FF] p-7 sm:p-10 shadow-2xl">
-                  <h3 class="text-xl font-extrabold text-white mb-6">Start a conversation with us</h3>
-                  <form id="bottom-lead-form" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate class="space-y-4">
-                    <input type="hidden" name="form-name" value="consultation" />
-                    <input type="hidden" name="monthlyBudget" value="Prefer not to say" />
-                    <input type="hidden" name="privacyConsent" value="Agreed" />
-                    <p class="hidden"><label>Bot: <input name="bot-field" /></label></p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <input type="text" name="fullName" placeholder="Full Name *" required aria-label="Full Name" class="ds-blue-input" />
-                      <input type="text" name="companyName" placeholder="Company or Brand Name *" required aria-label="Company Name" class="ds-blue-input" />
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <input type="email" name="email" placeholder="Business Email *" required aria-label="Business Email" class="ds-blue-input" />
-                      <input type="text" name="country" placeholder="Your Country / Time Zone *" required aria-label="Country or Time Zone" class="ds-blue-input" />
-                    </div>
-                    <select name="serviceRequired" required aria-label="Service Required" class="ds-blue-input">
-                      <option value="">Select Required Service *</option>
-                      ${SERVICES_DATA.map(
-                        (s) => `<option value="${s.title}">${s.title}</option>`
-                      ).join('')}
-                    </select>
-                    <textarea name="projectDetails" rows="3" placeholder="Tell us about your project, goals &amp; timeline *" required aria-label="Project Details" class="ds-blue-input"></textarea>
-                    <p id="bottom-form-err" role="alert" class="hidden text-xs font-semibold text-[#F87171]"></p>
-                    <button type="submit" class="ds-btn-gradient w-full py-4">
-                      <span>SUBMIT ENQUIRY</span>
-                      ${getSvgIcon('chevronRight', 'w-4 h-4')}
-                    </button>
-                  </form>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -2511,8 +2237,6 @@
             <div class="pt-6">${renderEmbeddedCtaStrip()}</div>
           </div>
         </section>
-
-        ${renderFaqSection()}
       </main>
     `;
   }
@@ -2529,6 +2253,30 @@
 
         <section class="bg-[#F2F7FF] text-[#0E2A6E] py-16 sm:py-20 lg:py-24">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <!-- Interactive Editorial Industry Carousel -->
+            <div class="space-y-4">
+              <div id="industry-carousel-stage">
+                ${renderIndustryCarouselContent(activeIndustryIdx)}
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
+                ${INDUSTRIES_DATA.map(
+                  (ind, i) => `
+                  <button type="button" data-ind-idx="${i}" class="p-3 text-left border transition-all ${
+                    i === activeIndustryIdx
+                      ? 'border-[#00B8FF] bg-[#0E2A6E] text-white shadow-lg ring-1 ring-[#00B8FF]'
+                      : 'bg-white border-[#D5E3F8] text-[#0E2A6E] hover:border-[#1D58C8]'
+                  }">
+                    <span class="block text-[10px] font-bold tracking-[0.16em] ${
+                      i === activeIndustryIdx ? 'text-[#00B8FF]' : 'text-[#1D58C8]'
+                    }">0${i + 1}</span>
+                    <span class="block text-[11px] font-bold mt-0.5 leading-snug">${ind.title}</span>
+                  </button>
+                `
+                ).join('')}
+              </div>
+            </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               ${INDUSTRIES_DATA.map(
                 (ind) => `
@@ -2834,6 +2582,21 @@
     `;
   }
 
+  function renderFaqPage() {
+    return `
+      <main>
+        ${renderPageBanner(
+          'FAQ',
+          'FREQUENTLY ASKED QUESTIONS',
+          'Answers to Common Digital Growth Questions',
+          'Everything you need to know about our 8 specialist services, worldwide execution, timelines, and getting started with JEXORA SOLUTIONS.'
+        )}
+
+        ${renderFaqSection()}
+      </main>
+    `;
+  }
+
   function renderContactPage() {
     const params = new URLSearchParams(window.location.search);
     const prefilledService = params.get('service') || '';
@@ -3040,9 +2803,9 @@
                   <span class="ds-wa-icon-anim shrink-0">${getSvgIcon('whatsapp', 'w-[18px] h-[18px] text-[#25D366]')}</span>
                   <span class="font-semibold">Chat on WhatsApp</span>
                 </a>
-                <a href="/contact" data-link class="flex items-center gap-3 text-white/85 hover:text-[#7DD8FF] transition-colors">
-                  <span class="text-[#7DD8FF] shrink-0">${getSvgIcon('globe', 'w-4 h-4')}</span>
-                  <span>jexorasolutions.com</span>
+                <a href="mailto:solutionsjexora@gmail.com" class="flex items-center gap-3 text-white/85 hover:text-[#7DD8FF] transition-colors">
+                  <span class="text-[#7DD8FF] shrink-0">${getSvgIcon('mail', 'w-4 h-4')}</span>
+                  <span>solutionsjexora@gmail.com</span>
                 </a>
               </div>
 
@@ -3061,7 +2824,7 @@
                 <li><a href="/services" data-link class="hover:text-white transition-colors">Services</a></li>
                 <li><a href="/industries" data-link class="hover:text-white transition-colors">Industries</a></li>
                 <li><a href="/blog" data-link class="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="/#faq" data-link class="hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="/faq" data-link class="hover:text-white transition-colors">FAQ</a></li>
                 <li><a href="/about" data-link class="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="/contact" data-link class="hover:text-white transition-colors">Contact</a></li>
               </ul>
@@ -3714,7 +3477,7 @@
     if (!root) return;
 
     const rawPath = window.location.pathname;
-    const validPaths = ['/', '/about', '/services', '/industries', '/blog', '/contact', '/seo-admin'];
+    const validPaths = ['/', '/about', '/services', '/industries', '/blog', '/faq', '/contact', '/seo-admin'];
     const isBlogDetail =
       rawPath.startsWith('/blog/') &&
       BLOG_POSTS.some((p) => p.slug === rawPath.replace('/blog/', ''));
@@ -3729,6 +3492,7 @@
     else if (pathname === '/industries') pageContent = renderIndustriesPage();
     else if (pathname === '/blog') pageContent = renderBlogPage();
     else if (isBlogDetail) pageContent = renderBlogDetailPage(pathname.replace('/blog/', ''));
+    else if (pathname === '/faq') pageContent = renderFaqPage();
     else if (pathname === '/contact') pageContent = renderContactPage();
     else if (pathname === '/seo-admin') {
       pageContent =

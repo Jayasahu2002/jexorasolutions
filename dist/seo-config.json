@@ -58,6 +58,18 @@
       "priority": "0.85",
       "changefreq": "weekly"
     },
+    "/faq": {
+      "label": "Frequently Asked Questions",
+      "title": "Frequently Asked Questions | JEXORA SOLUTIONS Agency",
+      "description": "Clear answers about JEXORA SOLUTIONS digital marketing services, worldwide delivery, AEO & GEO AI search, timelines, pricing transparency, and consultations.",
+      "keywords": "JEXORA SOLUTIONS FAQ, Digital Marketing Questions, SEO Timeline, Google Ads ROI, AEO GEO Explained, Worldwide Marketing Agency",
+      "robots": "index, follow",
+      "ogTitle": "Frequently Asked Questions | JEXORA SOLUTIONS",
+      "ogDescription": "Everything founders and marketing teams ask about our 8 specialist digital marketing services and worldwide execution.",
+      "ogImage": "https://jexorasolutions.com/og-cover.jpg",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
     "/about": {
       "label": "About Us & Founder",
       "title": "About JEXORA SOLUTIONS | Meet Founder Jigyasa Sahu",
